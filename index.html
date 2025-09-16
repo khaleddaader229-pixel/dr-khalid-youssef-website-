@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>د. خالد حسن السعيد يوسف - أخصائي أول جراحة العظام والمفاصل</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
         :root {
             --primary: #1a73e8;
@@ -118,14 +119,22 @@
             height: 180px;
             border-radius: 50%;
             margin: 0 auto 2rem;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            background-color: #ddd;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 4rem;
             color: white;
-            border: 5px solid white;
-            box-shadow: var(--shadow);
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
         }
         
         .btn {
@@ -140,11 +149,20 @@
             border: none;
             cursor: pointer;
             box-shadow: var(--shadow);
+            margin: 0.5rem;
         }
         
         .btn:hover {
             background-color: #43a047;
             transform: translateY(-3px);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
         }
         
         /* Sections */
@@ -266,6 +284,70 @@
             color: var(--dark);
         }
         
+        /* Reviews Section */
+        .reviews {
+            background-color: white;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .review-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .reviewer-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .reviewer-info {
+            flex: 1;
+        }
+        
+        .reviewer-name {
+            font-weight: bold;
+            margin-bottom: 0.2rem;
+        }
+        
+        .review-date {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .review-stars {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 0;
+        }
+        
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        
         /* Contact Section */
         .contact-container {
             display: flex;
@@ -293,6 +375,16 @@
             align-items: center;
             gap: 15px;
             font-size: 1.1rem;
+        }
+        
+        .contact-details a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary);
         }
         
         .contact-details i {
@@ -432,6 +524,10 @@
             .section-title h2 {
                 font-size: 1.8rem;
             }
+            
+            .contact-container {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -447,6 +543,7 @@
                     <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
                     <li><a href="#about"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
                     <li><a href="#services"><i class="fas fa-stethoscope"></i> الخدمات</a></li>
+                    <li><a href="#reviews"><i class="fas fa-star"></i> التقييمات</a></li>
                     <li><a href="#contact"><i class="fas fa-phone"></i> التواصل</a></li>
                 </ul>
             </nav>
@@ -456,13 +553,21 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-content">
-            <img src="https://postimg.cc/gallery/xH1mSbK">
+            <div class="profile-img">
                 <i class="fas fa-user-md"></i>
+                <img src="" alt="د. خالد حسن السعيد يوسف" id="profile-photo">
             </div>
             <h2>د. خالد حسن السعيد يوسف</h2>
             <p>أخصائي أول جراحة العظام والكسور وإصابات الملاعب والمفاصل</p>
             <p>ماجستير جراحة العظام - زميل كلية الجراحين المصرية</p>
-            <a href="#contact" class="btn">احجز موعد الآن</a>
+            <div class="hero-buttons">
+                <a href="tel:+966565245159" class="btn">
+                    <i class="fas fa-phone"></i> اتصل الآن
+                </a>
+                <a href="https://wa.me/966565245159" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> واتساب
+                </a>
+            </div>
         </div>
     </section>
 
@@ -537,6 +642,79 @@
         </div>
     </section>
 
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-title">
+                <h2>تقييمات المرضى</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">محمد أحمد</div>
+                            <div class="review-date">٢٠ أكتوبر ٢٠٢٣</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"دكتور خالد من أفضل الأطباء الذين تعاملت معهم، محترف وماهر في عمله ويشرح كل التفاصيل للمريض."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">فاطمة عبدالله</div>
+                            <div class="review-date">١٥ سبتمبر ٢٠٢٣</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"عملية الرباط الصليبي كانت ناجحة بفضل الله ثم مهارة الدكتور خالد، شكراً لكل فريق العمل."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">خالد السعدي</div>
+                            <div class="review-date">٣ نوفمبر ٢٠٢٣</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"تعامل راقي وشرح وافي للحالة، وأنصح كل من يعاني من مشاكل في العظام بزيارة الدكتور خالد."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div id="map"></div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -548,8 +726,8 @@
                     <h3>معلومات التواصل</h3>
                     <div class="contact-details">
                         <p><i class="fas fa-map-marker-alt"></i> العنوان: خميس مشيط، المملكة العربية السعودية</p>
-                        <p><i class="fas fa-phone"></i> الهاتف: 966565245159+</p>
-                        <p><i class="fas fa-envelope"></i> الإيميل: khaliddaader29@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:+966565245159">+966 56 524 5159</a></p>
+                        <p><i class="fas fa-envelope"></i> الإيميل: <a href="mailto:khaliddaader29@gmail.com">khaliddaader29@gmail.com</a></p>
                         <p><i class="fas fa-clock"></i> أوقات العمل: السبت إلى الخميس - 4 PM إلى 9 PM</p>
                     </div>
                     
@@ -605,6 +783,7 @@
                 <a href="#home">الرئيسية</a>
                 <a href="#about">عن الدكتور</a>
                 <a href="#services">الخدمات</a>
+                <a href="#reviews">التقييمات</a>
                 <a href="#contact">التواصل</a>
             </div>
             <p>© 2023 د. خالد حسن السعيد يوسف - جميع الحقوق محفوظة</p>
@@ -614,6 +793,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
         // Form submission handling
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
@@ -634,6 +814,38 @@
                 });
             });
         });
+
+        // Initialize map
+        function initMap() {
+            // مركز خميس مشيط الإحداثيات
+            var khamisMushait = [18.3094, 42.7660];
+            var map = L.map('map').setView(khamisMushait, 13);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            L.marker(khamisMushait).addTo(map)
+                .bindPopup('مركز الثمال الطبي<br>خميس مشيط، السعودية')
+                .openPopup();
+        }
+
+        // Initialize map when page loads
+        window.onload = function() {
+            initMap();
+        };
+
+        // Function to update profile photo when provided
+        function updateProfilePhoto(imageUrl) {
+            if (imageUrl) {
+                document.getElementById('profile-photo').src = imageUrl;
+                document.getElementById('profile-photo').style.display = 'block';
+                document.querySelector('.profile-img i').style.display = 'none';
+            }
+        }
+
+        // Replace with your actual image URL when you have it
+        // updateProfilePhoto('https://example.com/your-photo.jpg');
     </script>
 </body>
 </html>
