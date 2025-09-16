@@ -554,9 +554,8 @@
     <section id="home" class="hero">
         <div class="container hero-content">
             <div class="profile-img">
-                <i class="fas fa-user-md"></i>
-                <img src="https://i.postimg.cc/YCrpr9xQ/IMG-3607.jpg" alt="د. خالد حسن السعيد يوسف" id="profile-photo">
-            </div>
+    <img src="https://i.postimg.cc/YCrpr9xQ/IMG-3607.jpg" alt="د. خالد حسن السعيد يوسف" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
             <h2>د. خالد حسن السعيد يوسف</h2>
             <p>أخصائي أول جراحة العظام والكسور وإصابات الملاعب والمفاصل</p>
             <p>ماجستير جراحة العظام - زميل كلية الجراحين المصرية</p>
@@ -834,17 +833,6 @@
         window.onload = function() {
             initMap();
         };
-
-        // Function to update profile photo when provided
-        function updateProfilePhoto(imageUrl) {
-            if (imageUrl) {
-                document.getElementById('profile-photo').src = imageUrl;
-                document.getElementById('profile-photo').style.display = 'block';
-                document.querySelector('.profile-img i').style.display = 'none';
-            }
-        }
-
-        // Replace with your actual image URL when you have it
     </script>
 </body>
 </html>
