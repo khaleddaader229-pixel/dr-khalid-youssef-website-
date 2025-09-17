@@ -240,172 +240,172 @@
         }
         
         .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-.service-card {
-    display: block;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border-radius: 15px;
-    padding: 2.5rem 2rem;
-    box-shadow: var(--shadow);
-    transition: all 0.4s ease;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.05);
-}
+        .service-card {
+            display: block;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
 
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
 
-.service-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    color: inherit;
-    text-decoration: none;
-}
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            color: inherit;
+            text-decoration: none;
+        }
 
-.service-card:hover::before {
-    transform: scaleX(1);
-}
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
 
-.service-icon {
-    font-size: 3.5rem;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-    background: var(--light);
-    width: 90px;
-    height: 90px;
-    line-height: 90px;
-    border-radius: 50%;
-    text-align: center;
-}
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            background: var(--light);
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 50%;
+            text-align: center;
+        }
 
-.service-card:hover .service-icon {
-    transform: scale(1.1) rotate(5deg);
-    color: var(--accent);
-    background: linear-gradient(135deg, var(--light) 0%, #e3f2fd 100%);
-}
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--accent);
+            background: linear-gradient(135deg, var(--light) 0%, #e3f2fd 100%);
+        }
 
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--dark);
-    transition: color 0.3s ease;
-}
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
 
-.service-card:hover h3 {
-    color: var(--primary);
-}
+        .service-card:hover h3 {
+            color: var(--primary);
+        }
 
-.service-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
 
-.service-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 1rem;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    padding: 8px 16px;
-    border: 2px solid transparent;
-    border-radius: 25px;
-    background: var(--light);
-}
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            background: var(--light);
+        }
 
-.service-card:hover .service-link {
-    opacity: 1;
-    color: white;
-    background: var(--primary);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
-}
+        .service-card:hover .service-link {
+            opacity: 1;
+            color: white;
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
+        }
 
-.service-link i {
-    margin-right: 8px;
-    transition: transform 0.3s ease;
-}
+        .service-link i {
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
 
-.service-card:hover .service-link i {
-    transform: translateX(-5px);
-}
+        .service-card:hover .service-link i {
+            transform: translateX(-5px);
+        }
 
-/* ألوان مميزة لكل بطاقة */
-.service-card:nth-child(1) .service-icon {
-    color: #1a73e8;
-}
+        /* ألوان مميزة لكل بطاقة */
+        .service-card:nth-child(1) .service-icon {
+            color: #1a73e8;
+        }
 
-.service-card:nth-child(2) .service-icon {
-    color: #4caf50;
-}
+        .service-card:nth-child(2) .service-icon {
+            color: #4caf50;
+        }
 
-.service-card:nth-child(3) .service-icon {
-    color: #ff9800;
-}
+        .service-card:nth-child(3) .service-icon {
+            color: #ff9800;
+        }
 
-.service-card:nth-child(4) .service-icon {
-    color: #9c27b0;
-}
+        .service-card:nth-child(4) .service-icon {
+            color: #9c27b0;
+        }
 
-.service-card:nth-child(1):hover .service-icon {
-    color: #0d47a1;
-}
+        .service-card:nth-child(1):hover .service-icon {
+            color: #0d47a1;
+        }
 
-.service-card:nth-child(2):hover .service-icon {
-    color: #2e7d32;
-}
+        .service-card:nth-child(2):hover .service-icon {
+            color: #2e7d32;
+        }
 
-.service-card:nth-child(3):hover .service-icon {
-    color: #f57c00;
-}
+        .service-card:nth-child(3):hover .service-icon {
+            color: #f57c00;
+        }
 
-.service-card:nth-child(4):hover .service-icon {
-    color: #7b1fa2;
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .service-card:nth-child(4):hover .service-icon {
+            color: #7b1fa2;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.service-card {
-    animation: fadeIn 0.6s ease forwards;
-    opacity: 0;
-}
+        .service-card {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
 
-.service-card:nth-child(1) { animation-delay: 0.1s; }
-.service-card:nth-child(2) { animation-delay: 0.2s; }
-.service-card:nth-child(3) { animation-delay: 0.3s; }
-.service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
         
         /* Reviews Section */
         .reviews {
@@ -735,50 +735,49 @@
                 <h2>الخدمات الطبية</h2>
             </div>
             <div class="services-grid">
-    <a href="bones-surgery.html" class="service-card">
-        <div class="service-icon">
-            <i class="fas fa-bone"></i>
-        </div>
-        <h3>جراحة العظام والكسور</h3>
-        <p>علاج كسور العظام بمختلف أنواعها باستخدام أحدث التقنيات الجراحية والمنظار الجراحي.</p>
-        <span class="service-link">
-            <i class="fas fa-arrow-left"></i> اكتشف المزيد
-        </span>
-    </a>
-    
-    <a href="sports-injuries.html" class="service-card">
-        <div class="service-icon">
-            <i class="fas fa-running"></i>
-        </div>
-        <h3>إصابات الملاعب</h3>
-        <p>تشخيص وعلاج إصابات الملاعب المختلفة بما في ذلك إصابات الرباط الصليبي والغضاريف.</p>
-        <span class="service-link">
-            <i class="fas fa-arrow-left"></i> اكتشف المزيد
-        </span>
-    </a>
-    
-    <a href="joints-surgery.html" class="service-card">
-        <div class="service-icon">
-            <i class="fas fa-wheelchair"></i>
-        </div>
-        <h3>جراحة المفاصل</h3>
-        <p>جراحات استبدال المفاصل خاصة مفصل الركبة والورك باستخدام أحدث التقنيات العالمية.</p>
-        <span class="service-link">
-            <i class="fas fa-arrow-left"></i> اكتشف المزيد
-        </span>
-    </a>
-    
-    <a href="arthroscopy.html" class="service-card">
-        <div class="service-icon">
-            <i class="fas fa-laptop-medical"></i>
-        </div>
-        <h3>جراحة المناظير</h3>
-        <p>جراحات المناظير للكتف والركبة لإصابات الأربطة والغضاريف بأقل تدخل جراحي.</p>
-        <span class="service-link">
-            <i class="fas fa-arrow-left"></i> اكتشف المزيد
-        </span>
-    </a>
-</div>
+                <a href="bones-surgery.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>جراحة العظام والكسور</h3>
+                    <p>علاج كسور العظام بمختلف أنواعها باستخدام أحدث التقنيات الجراحية والمنظار الجراحي.</p>
+                    <span class="service-link">
+                        <i class="fas fa-arrow-left"></i> اكتشف المزيد
+                    </span>
+                </a>
+                
+                <a href="sports-injuries.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>إصابات الملاعب</h3>
+                    <p>تشخيص وعلاج إصابات الملاعب المختلفة بما في ذلك إصابات الرباط الصليبي والغضاريف.</p>
+                    <span class="service-link">
+                        <i class="fas fa-arrow-left"></i> اكتشف المزيد
+                    </span>
+                </a>
+                
+                <a href="joints-surgery.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3>جراحة المفاصل</h3>
+                    <p>جراحات استبدال المفاصل خاصة مفصل الركبة والورك باستخدام أحدث التقنيات العالمية.</p>
+                    <span class="service-link">
+                        <i class="fas fa-arrow-left"></i> اكتشف المزيد
+                    </span>
+                </a>
+                
+                <a href="arthroscopy.html" class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h3>جراحة المناظير</h3>
+                    <p>جراحات المناظير للكتف والركبة لإصابات الأربطة والغضاريف بأقل تدخل جراحي.</p>
+                    <span class="service-link">
+                        <i class="fas fa-arrow-left"></i> اكتشف المزيد
+                    </span>
+                </a>
             </div>
         </div>
     </section>
@@ -834,7 +833,7 @@
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="reviewer-info">
-                            <div class="reviewer-name">خالد السعدي</div>
+                            <div class="reviewer-name">خالد السعدi</div>
                             <div class="review-date">٣ نوفمبر ٢٠٢٣</div>
                         </div>
                     </div>
