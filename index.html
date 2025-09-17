@@ -850,10 +850,15 @@
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map-section">
-        <div id="map"></div>
-    </section>
+    <!-- في قسم الخرائط في الصفحة الرئيسية -->
+<section class="map-section">
+    <div id="map"></div>
+    <div style="text-align: center; padding: 20px; background: #f5f9ff;">
+        <a href="https://maps.app.goo.gl/ixA4Npz4y7A8THZCA?g_st=ipc" target="_blank" class="btn">
+            <i class="fas fa-map-marker-alt"></i> افتح موقع المركز على خرائط جوجل
+        </a>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -956,24 +961,36 @@
         });
 
         // Initialize map
-        function initMap() {
-            // مركز خميس مشيط الإحداثيات
-            var khamisMushait = [18.3094, 42.7660];
-            var map = L.map('map').setView(khamisMushait, 13);
-            
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            
-            L.marker(khamisMushait).addTo(map)
-                .bindPopup('مركز الثمال الطبي<br>خميس مشيط، السعودية')
-                .openPopup();
-        }
+function initMap() {
+    // مركز الثمال الطبي بالإحداثيات الصحيحة
+    var medicalCenter = [18.3094, 42.7660]; // إحداثيات خميس مشيط التقريبية
+    var map = L.map('map').setView(medicalCenter, 15);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    // إضافة علامة للمركز الطبي
+    var marker = L.marker(medicalCenter).addTo(map)
+        .bindPopup(`
+            <strong>مركز الثمال الطبي</strong><br>
+            خميس مشيط، السعودية<br>
+            <a href="https://maps.app.goo.gl/ixA4Npz4y7A8THZCA?g_st=ipc" target="_blank" style="color: #1a73e8; text-decoration: underline;">
+                عرض على خرائط جوجل
+            </a>
+        `)
+        .openPopup();
+    
+    // إضافة حدث النقر على الخريطة لفتح خرائط جوجل
+    map.on('click', function() {
+        window.open('https://maps.app.goo.gl/ixA4Npz4y7A8THZCA?g_st=ipc', '_blank');
+    });
+}
 
-        // Initialize map when page loads
-        window.onload = function() {
-            initMap();
-        };
+// Initialize map when page loads
+window.onload = function() {
+    initMap();
+};
     </script>
 </body>
 </html>
