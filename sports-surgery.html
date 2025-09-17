@@ -1,1 +1,299 @@
- 
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إصابات الملاعب - د. خالد حسن السعيد يوسف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* أنماط الصفحة - يمكن نقلها لملف منفصل لاحقاً */
+        :root {
+            --primary: #1a73e8;
+            --secondary: #0d47a1;
+            --accent: #4caf50;
+            --light: #f5f9ff;
+            --dark: #1a237e;
+            --text: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .logo span {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Service Detail Styles */
+        .service-detail {
+            padding: 5rem 0;
+        }
+        
+        .service-hero {
+            background: linear-gradient(rgba(26, 115, 232, 0.9), rgba(13, 71, 161, 0.9));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .service-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .service-info {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .service-images {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .service-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .service-features {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+        
+        .feature-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .feature-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-item h3 i {
+            color: var(--accent);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background-color: #43a047;
+            transform: translateY(-3px);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>د. خالد حسن السعيد يوسف <span>أخصائي أول جراحة العظام والمفاصل</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
+                    <li><a href="index.html#services"><i class="fas fa-stethoscope"></i> الخدمات</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-phone"></i> التواصل</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <h2>إصابات الملاعب</h2>
+            <p>تشخيص وعلاج إصابات الملاعب المختلفة بأحدث التقنيات</p>
+        </div>
+    </section>
+
+    <!-- Service Detail -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-info">
+                    <h3>عن الخدمة</h3>
+                    <p>إصابات الملاعب تشكل تحدياً كبيراً للرياضيين وقد تؤثر على مسيرتهم الرياضية. يقدم الدكتور خالد حسن تشخيصاً دقيقاً وعلاجاً متقدماً لإصابات الملاعب المختلفة بما في ذلك إصابات الرباط الصليبي والغضاريف والإصابات الرياضية الأخرى.</p>
+                    
+                    <h3>الإصابات التي نتعامل معها</h3>
+                    <ul>
+                        <li>إصابات الرباط الصليبي الأمامي والخلفي</li>
+                        <li>إصابات الغضاريف الهلالية</li>
+                        <li>إصابات الكتف والكتلة الكتفية</li>
+                        <li>إصابات الأوتار والعضلات</li>
+                        <li>الكسور والإصابات الناتجة عن الإجهاد</li>
+                    </ul>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <h3><i class="fas fa-check-circle"></i> تشخيص دقيق</h3>
+                            <p>نستخدم أحدث تقنيات التصوير الطبي لتشخيص دقيق للإصابات.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-check-circle"></i> علاج متقدم</h3>
+                            <p>برامج علاجية متقدمة تشمل العلاج التحفظي والجراحي.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-check-circle"></i> تأهيل رياضي</h3>
+                            <p>برامج تأهيلية متخصصة للعودة إلى ممارسة الرياضة بأمان.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <a href="https://wa.me/966565245159" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> احجز موعد عبر الواتساب
+                        </a>
+                        <a href="tel:+966565245159" class="btn">
+                            <i class="fas fa-phone"></i> اتصل الآن
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-images">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="إصابات الملاعب">
+                    </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1571019614244-c5d476332b3c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="علاج الإصابات">
+                    </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="تأهيل رياضي">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
