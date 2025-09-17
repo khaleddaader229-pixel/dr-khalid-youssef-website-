@@ -126,11 +126,19 @@
             overflow: hidden;
             margin-bottom: 1.5rem;
             box-shadow: var(--shadow);
+            background-color: #f0f0f0;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
         }
         
         .service-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
         
@@ -210,6 +218,10 @@
             nav ul li {
                 margin: 0.5rem;
             }
+            
+            .service-content {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -254,20 +266,22 @@
                         <li>جراحات إصلاح المفاصل</li>
                         <li>جراحات المناظير للمفاصل</li>
                         <li>علاج أمراض المفاصل التنكسية</li>
+                        <li>جراحة مفاصل اليد والأصابع</li>
+                        <li>جراحة مفصل الكتف والكوع</li>
                     </ul>
                     
                     <div class="service-features">
                         <div class="feature-item">
                             <h3><i class="fas fa-check-circle"></i> تقنيات متطورة</h3>
-                            <p>نستخدم أحدث التقنيات في جراحة المفاصل لضمان أفضل النتائج.</p>
+                            <p>نستخدم أحدث التقنيات في جراحة المفاصل لضمان أفضل النتائج وأسرع فترة تعافٍ.</p>
                         </div>
                         <div class="feature-item">
                             <h3><i class="fas fa-check-circle"></i> مفاصل صناعية عالية الجودة</h3>
-                            <p>استخدام أفضل أنواع المفاصل الصناعية المعتمدة عالمياً.</p>
+                            <p>استخدام أفضل أنواع المفاصل الصناعية المعتمدة عالمياً والمناسبة لكل حالة.</p>
                         </div>
                         <div class="feature-item">
                             <h3><i class="fas fa-check-circle"></i> متابعة شاملة</h3>
-                            <p>برنامج متكامل للمتابعة بعد الجراحة لضمان التعافي التام.</p>
+                            <p>برنامج متكامل للمتابعة بعد الجراحة لضمان التعافي التام والعودة للحياة الطبيعية.</p>
                         </div>
                     </div>
                     
@@ -282,16 +296,16 @@
                 </div>
                 
                 <div class="service-images">
-    <div class="service-image">
-        <img src="https://as1.ftcdn.net/v2/jpg/05/46/86/74/1000_F_546867474_6V1dXh1sJXc7H1cKk1F6k9Z6Q2W9Z6Q2.jpg" alt="مفصل ركبة صناعي">
-    </div>
-    <div class="service-image">
-        <img src="https://as2.ftcdn.net/v2/jpg/05/46/86/75/1000_F_546867575_6V1dXh1sJXc7H1cKk1F6k9Z6Q2W9Z6Q2.jpg" alt="أشعة لمفصل الورك الصناعي">
-    </div>
-    <div class="service-image">
-        <img src="https://as1.ftcdn.net/v2/jpg/05/46/86/76/1000_F_546867676_6V1dXh1sJXc7H1cKk1F6k9Z6Q2W9Z6Q2.jpg" alt="جراحة استبدال المفصل">
-    </div>
-</div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="جراحة المفاصل">
+                    </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="مفصل صناعي">
+                    </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="استبدال المفصل">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
