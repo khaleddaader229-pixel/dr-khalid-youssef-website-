@@ -564,7 +564,33 @@
             height: 400px;
             width: 100%;
         }
-        
+        /* أنماط روابط التقييمات */
+.review-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.review-link:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.review-link i {
+    margin-left: 5px;
+}
+
+.reviewer-img .fab {
+    font-size: 1.5rem;
+    color: #4285F4;
+}
         /* Contact Section */
         .contact-container {
             display: flex;
@@ -925,72 +951,135 @@
 <!-- قبل قسم التقييمات -->
 <section id="reviews" class="reviews">
     <!-- Reviews Section -->
-    <section id="reviews" class="reviews">
-        <div class="container">
-            <div class="section-title">
-                <h2>تقييمات المرضى</h2>
+<section id="reviews" class="reviews">
+    <div class="container">
+        <div class="section-title">
+            <h2>تقييمات المرضى على جوجل</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-img">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">مراجعة على جوجل</div>
+                        <div class="review-date">تقييم 5 نجوم</div>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"دكتور خالد من أفضل دكاترة العظام، تعامل راقي ومهنية عالية في التشخيص والعلاج."</p>
+                <a href="https://maps.app.goo.gl/PxmgC1PFZrSeMixQ8?g_st=ic" target="_blank" class="review-link">
+                    <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
+                </a>
             </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <div class="reviewer-name">محمد أحمد</div>
-                            <div class="review-date">٢٠ أكتوبر ٢٠٢٣</div>
-                        </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-img">
+                        <i class="fab fa-google"></i>
                     </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">مراجعة على جوجل</div>
+                        <div class="review-date">تقييم 5 نجوم</div>
                     </div>
-                    <p>"دكتور خالد من أفضل الأطباء الذين تعاملت معهم، محترف وماهر في عمله ويشرح كل التفاصيل للمريض."</p>
                 </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <div class="reviewer-name">فاطمة عبدالله</div>
-                            <div class="review-date">١٥ سبتمبر ٢٠٢٣</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p>"عملية الرباط الصليبي كانت ناجحة بفضل الله ثم مهارة الدكتور خالد، شكراً لكل فريق العمل."</p>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-img">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <div class="reviewer-name">خالد السعد</div>
-                            <div class="review-date">٣ نوفمبر ٢٠٢٣</div>
-                        </div>
+                <p>"الله يجزاه الجنة، دكتور متمكن ومتخصص وشرح وافي للحالة وطمني على ابني."</p>
+                <a href="https://maps.app.goo.gl/iceFKV2RJhBPDitB6?g_st=ic" target="_blank" class="review-link">
+                    <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
+                </a>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-img">
+                        <i class="fab fa-google"></i>
                     </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">مراجعة على جوجل</div>
+                        <div class="review-date">تقييم 5 نجوم</div>
                     </div>
-                    <p>"تعامل راقي وشرح وافي للحالة، وأنصح كل من يعاني من مشاكل في العظام بزيارة الدكتور خالد."</p>
                 </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"دكتور خالد من أمهر الدكاترة في جراحة العظام، أجرى عملية ناجحة لوالدي والحمدلله."</p>
+                <a href="https://maps.app.goo.gl/MDXbhKiBhu1HasUo7?g_st=ic" target="_blank" class="review-link">
+                    <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
+                </a>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-img">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">مراجعة على جوجل</div>
+                        <div class="review-date">تقييم 5 نجوم</div>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"يعطيك العافية دكتور، تشخيص دقيق وعلاج فعال، أنصح بالزيارة والاستفادة من خبرته."</p>
+                <a href="https://maps.app.goo.gl/Pn8sSZG18hT4hoEVA?g_st=ic" target="_blank" class="review-link">
+                    <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
+                </a>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-img">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">مراجعة على جوجل</div>
+                        <div class="review-date">تقييم 5 نجوم</div>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"شكراً دكتور خالد على المتابعة والاهتمام، والحمدلله تحسنت حالتي كثيراً بفضل علاجك."</p>
+                <a href="https://maps.app.goo.gl/A8Qj74sFGZ6jAfnd9?g_st=ic" target="_blank" class="review-link">
+                    <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
+                </a>
             </div>
         </div>
-    </section>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://search.google.com/local/reviews?placeid=YOUR_PLACE_ID" target="_blank" class="btn">
+                <i class="fab fa-google"></i> عرض جميع التقييمات على جوجل
+            </a>
+        </div>
+    </div>
+</section>
 
     <!-- في قسم الخرائط في الصفحة الرئيسية -->
 <!-- في قسم الخرائط في الصفحة الرئيسية -->
