@@ -1,1 +1,489 @@
- 
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات طبية - د. خالد حسن السعيد يوسف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --secondary: #0d47a1;
+            --accent: #4caf50;
+            --light: #f5f9ff;
+            --dark: #1a237e;
+            --text: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .logo span {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Medical Info Page Styles */
+        .medical-page {
+            padding: 4rem 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 1rem;
+            border-radius: 10px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .medical-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .article-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .article-content {
+            padding: 2.5rem;
+        }
+        
+        .article-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .article-header i {
+            font-size: 2rem;
+            margin-left: 1rem;
+        }
+        
+        .article-header h2 {
+            font-size: 1.8rem;
+        }
+        
+        .article-body {
+            margin-bottom: 2rem;
+        }
+        
+        .article-body h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        .article-body p, .article-body ul {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .article-body ul {
+            padding-right: 1.5rem;
+        }
+        
+        .article-body li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 2rem;
+            padding: 0.7rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .back-to-top i {
+            margin-right: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .article-content {
+                padding: 1.5rem;
+            }
+            
+            .article-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>د. خالد حسن السعيد يوسف <span>أخصائي أول جراحة العظام والمفاصل</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
+                    <li><a href="index.html#services"><i class="fas fa-stethoscope"></i> الخدمات</a></li>
+                    <li><a href="index.html#reviews"><i class="fas fa-star"></i> التقييمات</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-phone"></i> التواصل</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Medical Info Page Content -->
+    <main class="medical-page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-heartbeat"></i> المعلومات الطبية</h1>
+                <p>مصدر موثوق للمعلومات حول أمراض وإصابات العظام والمفاصل وطرق علاجها</p>
+            </div>
+            
+            <div class="medical-articles">
+                <!-- Article 1 -->
+                <article id="osteoporosis" class="article-card">
+                    <div class="article-content">
+                        <div class="article-header">
+                            <i class="fas fa-bone"></i>
+                            <h2>هشاشة العظام</h2>
+                        </div>
+                        <div class="article-body">
+                            <p>هشاشة العظام هي حالة طبية تضعف فيها العظام وتصبح هشة، مما يزيد من خطر الكسور. تحدث عندما يفقد الجسم كثافة العظام أو عندما تنخفض كمية المعادن في العظام.</p>
+                            
+                            <h3>الأعراض:</h3>
+                            <ul>
+                                <li>آلام الظهر بسبب كسور الفقرات</li>
+                                <li>فقدان الطول مع مرور الوقت</li>
+                                <li>وضعية منحنية</li>
+                                <li>كسور العظام بشكل أسهل من المتوقع</li>
+                            </ul>
+                            
+                            <h3>عوامل الخطر:</h3>
+                            <ul>
+                                <li>التقدم في السن</li>
+                                <li>انخفاض مستويات هرمون الإستروجين لدى النساء بعد انقطاع الطمث</li>
+                                <li>نقص الكالسيوم وفيتامين د</li>
+                                <li>قلة النشاط البدني</li>
+                                <li>التدخين والإفراط في تناول الكحول</li>
+                                <li>تاريخ عائلي للإصابة بهشاشة العظام</li>
+                            </ul>
+                            
+                            <h3>الوقاية والعلاج:</h3>
+                            <ul>
+                                <li>تناول غذاء غني بالكالسيوم وفيتامين د</li>
+                                <li>ممارسة التمارين الرياضية المنتظمة</li>
+                                <li>التوقف عن التدخين وتجنب الإفراط في الكحول</li>
+                                <li>العلاج الدوائي تحت إشراف طبي</li>
+                                <li>الفحص الدوري لكثافة العظام</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="back-to-top">
+                            <i class="fas fa-arrow-up"></i> العودة للأعلى
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 2 -->
+                <article id="arthritis" class="article-card">
+                    <div class="article-content">
+                        <div class="article-header">
+                            <i class="fas fa-wheelchair"></i>
+                            <h2>التهاب المفاصل</h2>
+                        </div>
+                        <div class="article-body">
+                            <p>التهاب المفاصل هو تورم وآلام في المفاصل يمكن أن يؤثر على نطاق الحركة. هناك أكثر من 100 نوع مختلف من التهاب المفاصل، وأكثرها شيوعًا هي الفصال العظمي والتهاب المفاصل الروماتويدي.</p>
+                            
+                            <h3>أنواع التهاب المفاصل:</h3>
+                            <ul>
+                                <li><strong>الفصال العظمي:</strong> يحدث بسبب تآكل الغضروف الواقي في نهايات العظام</li>
+                                <li><strong>التهاب المفاصل الروماتويدي:</strong> مرض مناعي ذاتي يهاجم فيه الجسم المفاصل</li>
+                                <li><strong>النقرس:</strong> يحدث بسبب تراكم بلورات حمض اليوريك في المفاصل</li>
+                                <li><strong>التهاب المفاصل الصدفي:</strong> يرتبط بمرض الصدفية الجلدي</li>
+                            </ul>
+                            
+                            <h3>الأعراض الشائعة:</h3>
+                            <ul>
+                                <li>ألم وتيبس في المفاصل</li>
+                                <li>تورم واحمرار حول المفصل</li>
+                                <li>انخفاض نطاق الحركة</li>
+                                <li>الشعور بالدفء في المفصل المصاب</li>
+                            </ul>
+                            
+                            <h3>خيارات العلاج:</h3>
+                            <ul>
+                                <li>الأدوية المسكنة للألم والمضادة للالتهابات</li>
+                                <li>العلاج الطبيعي والتمارين الرياضية</li>
+                                <li>العلاج الوظيفي لتحسين أداء المهام اليومية</li>
+                                <li>الجراحة في الحالات المتقدمة (استبدال المفاصل)</li>
+                                <li>تغيير نمط الحياة وإدارة الوزن</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="back-to-top">
+                            <i class="fas fa-arrow-up"></i> العودة للأعلى
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Article 3 -->
+                <article id="acl" class="article-card">
+                    <div class="article-content">
+                        <div class="article-header">
+                            <i class="fas fa-running"></i>
+                            <h2>إصابات الرباط الصليبي</h2>
+                        </div>
+                        <div class="article-body">
+                            <p>الرباط الصليبي الأمامي (ACL) هو أحد الأربطة الرئيسية في الركبة التي تساعد على استقرار مفصل الركبة. إصابات الرباط الصليبي شائعة بين الرياضيين وخاصة في الرياضات التي تتضمن توقفًا مفاجئًا أو تغييرًا في الاتجاه.</p>
+                            
+                            <h3>أسباب الإصابة:</h3>
+                            <ul>
+                                <li>التوقف المفاجئ مع تغيير الاتجاه (القطع)</li>
+                                <li>الهُبوط بشكل خاطئ بعد القفز</li>
+                                <li>الاصطدام المباشر بالركبة (كما في كرة القدم)</li>
+                                <li>التباطؤ المفاجئ أثناء الجري</li>
+                            </ul>
+                            
+                            <h3>أعراض إصابة الرباط الصليبي:</h3>
+                            <ul>
+                                <li>سماع صوت "فرقعة" عند حدوث الإصابة</li>
+                                <li>ألم شديد وعدم القدرة على مواصلة النشاط</li>
+                                <li>تورم سريع في الركبة</li>
+                                <li>فقدان نطاق الحركة</li>
+                                <li>الشعور بعدم الاستقرار أو "التراخي" في الركبة</li>
+                            </ul>
+                            
+                            <h3>خيارات العلاج:</h3>
+                            <ul>
+                                <li>العلاج التحفظي (للإصابات الجزئية أو للمرضى الأقل نشاطًا)</li>
+                                <li>الجراحة الترميمية (للمرضى النشطين أو الرياضيين)</li>
+                                <li>العلاج الطبيعي المكثف بعد الجراحة</li>
+                                <li>برامج إعادة التأهيل الرياضي</li>
+                                <li>تمارين الوقاية لتقوية العضلات حول الركبة</li>
+                            </ul>
+                            
+                            <h3>الوقاية:</h3>
+                            <ul>
+                                <li>تمارين تقوية عضلات الفخذين والأرداف</li>
+                                <li>تحسين تقنيات القفز والهبوط</li>
+                                <li>تمارين التوازن والتحكم في الجسم</li>
+                                <li>الاحماء المناسب قبل ممارسة الرياضة</li>
+                                <li>استخدام التقنيات المناسبة في الرياضات عالية المخاطر</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="back-to-top">
+                            <i class="fas fa-arrow-up"></i> العودة للأعلى
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#about">عن الدكتور</a>
+                <a href="index.html#services">الخدمات</a>
+                <a href="index.html#reviews">التقييمات</a>
+                <a href="index.html#contact">التواصل</a>
+            </div>
+            <p>© 2023 د. خالد حسن السعيد يوسف - جميع الحقوق محفوظة</p>
+            <div class="copyright">
+                <p>تم إنشاء هذا الموقع لأغراض تعريفية بطبية الدكتور وخبراته</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for back to top links
+        document.querySelectorAll('.back-to-top').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId.startsWith('index.html')) {
+                    window.location.href = targetId;
+                    return;
+                }
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
