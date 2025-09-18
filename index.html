@@ -558,7 +558,117 @@
             color: #FFD700;
             margin-bottom: 1rem;
         }
-        
+        /* أنماط قسم الفيديوهات */
+.videos {
+    background-color: var(--light);
+    padding: 5rem 0;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.1);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background: var(--primary);
+}
+
+.play-button i {
+    color: var(--primary);
+    font-size: 20px;
+    margin-left: 3px;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover i {
+    color: white;
+}
+
+.video-info {
+    padding: 1.5rem;
+}
+
+.video-info h3 {
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.video-info p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.video-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.video-link:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.video-link i {
+    margin-left: 8px;
+    font-size: 1.2rem;
+}
         /* Map Section */
         .map-section {
             padding: 0;
@@ -793,8 +903,9 @@
         <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
         <li><a href="#about"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
         <li><a href="#services"><i class="fas fa-stethoscope"></i> الخدمات</a></li>
-        <!-- أضف هذا السطر -->
         <li><a href="#medical-info"><i class="fas fa-heartbeat"></i> معلومات طبية</a></li>
+        <!-- أضف هذا السطر -->
+        <li><a href="#videos"><i class="fas fa-video"></i> فيديوهات</a></li>
         <li><a href="#reviews"><i class="fas fa-star"></i> التقييمات</a></li>
         <li><a href="#contact"><i class="fas fa-phone"></i> التواصل</a></li>
     </ul>
@@ -951,7 +1062,70 @@
         </div>
     </div>
 </section>
+<!-- بعد قسم المعلومات الطبية -->
+</section>
 
+<!-- قسم الفيديوهات الجديد -->
+<section id="videos" class="videos">
+    <div class="container">
+        <div class="section-title">
+            <h2>فيديوهات طبية</h2>
+            <p>مقاطع فيديو تعليمية وتوعوية حول صحة العظام والمفاصل</p>
+        </div>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://i.postimg.cc/8Cz7L7Z0/video-thumb-1.jpg" alt="فيديو طبي">
+                    <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>نصائح لصحة العظام والمفاصل</h3>
+                    <p>نصائح مهمة للحفاظ على صحة العظام والمفاصل وتجنب الإصابات</p>
+                    <a href="https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz" target="_blank" class="video-link">
+                        <i class="fab fa-instagram"></i> مشاهدة على انستجرام
+                    </a>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://i.postimg.cc/8Cz7L7Z0/video-thumb-2.jpg" alt="فيديو طبي">
+                    <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>تمارين لتقوية العظام</h3>
+                    <p>تمارين بسيطة يمكن ممارستها daily لتقوية العظام وتحسين المرونة</p>
+                    <a href="https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==" target="_blank" class="video-link">
+                        <i class="fab fa-instagram"></i> مشاهدة على انستجرام
+                    </a>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="https://i.postimg.cc/8Cz7L7Z0/video-thumb-3.jpg" alt="فيديو طبي">
+                    <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>علاج إصابات الملاعب</h3>
+                    <p>أحدث الطرق لعلاج إصابات الملاعب والوقاية منها</p>
+                    <a href="https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz" target="_blank" class="video-link">
+                        <i class="fab fa-instagram"></i> مشاهدة على انستجرام
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- قبل قسم التقييمات -->
+<section id="reviews" class="reviews">
 <!-- قبل قسم التقييمات -->
 <section id="reviews" class="reviews">
     <!-- Reviews Section -->
@@ -1182,7 +1356,10 @@
             alert('شكراً لتواصلكم، سيتم الرد عليكم في أقرب وقت ممكن.');
             this.reset();
         });
-        
+        // فتح الفيديو في نافذة جديدة
+function openVideo(url) {
+    window.open(url, '_blank');
+}
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
