@@ -406,7 +406,101 @@
         .service-card:nth-child(2) { animation-delay: 0.2s; }
         .service-card:nth-child(3) { animation-delay: 0.3s; }
         .service-card:nth-child(4) { animation-delay: 0.4s; }
-        
+        /* أنماط قسم المعلومات الطبية */
+.medical-info {
+    background-color: white;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border-left: 5px solid var(--primary);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.info-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-card h3 i {
+    color: var(--accent);
+}
+
+.info-card p {
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--secondary);
+    gap: 8px;
+}
+
+.read-more i {
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover i {
+    transform: translateX(-5px);
+}
+
+.medical-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.view-all {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.view-all:hover {
+    background-color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
+}
+
+.view-all i {
+    margin-right: 8px;
+}
         /* Reviews Section */
         .reviews {
             background-color: white;
@@ -665,14 +759,16 @@
                 <h1>د. خالد حسن السعيد يوسف <span>أخصائي أول جراحة العظام والمفاصل</span></h1>
             </div>
             <nav>
-                <ul>
-                    <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
-                    <li><a href="#about"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
-                    <li><a href="#services"><i class="fas fa-stethoscope"></i> الخدمات</a></li>
-                    <li><a href="#reviews"><i class="fas fa-star"></i> التقييمات</a></li>
-                    <li><a href="#contact"><i class="fas fa-phone"></i> التواصل</a></li>
-                </ul>
-            </nav>
+    <ul>
+        <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="#about"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
+        <li><a href="#services"><i class="fas fa-stethoscope"></i> الخدمات</a></li>
+        <!-- أضف هذا السطر -->
+        <li><a href="#medical-info"><i class="fas fa-heartbeat"></i> معلومات طبية</a></li>
+        <li><a href="#reviews"><i class="fas fa-star"></i> التقييمات</a></li>
+        <li><a href="#contact"><i class="fas fa-phone"></i> التواصل</a></li>
+    </ul>
+</nav>
         </div>
     </header>
 
@@ -781,7 +877,53 @@
             </div>
         </div>
     </section>
+<!-- بعد قسم الخدمات -->
+</section>
 
+<!-- قسم المعلومات الطبية الجديد -->
+<section id="medical-info" class="medical-info">
+    <div class="container">
+        <div class="medical-header">
+            <div class="section-title" style="margin-bottom: 0;">
+                <h2>معلومات طبية</h2>
+            </div>
+            <a href="medical-info.html" class="view-all">
+                <i class="fas fa-book-medical"></i> جميع المقالات
+            </a>
+        </div>
+        <div class="info-cards">
+            <div class="info-card">
+                <h3><i class="fas fa-bone"></i> هشاشة العظام</h3>
+                <p>هشاشة العظام هي حالة تضعف فيها العظام وتصبح هشة، مما يزيد من خطر الكسور. تعرف على الأعراض والأسباب وطرق الوقاية والعلاج.</p>
+                <a href="medical-info.html#osteoporosis" class="read-more">
+                    <span>قراءة المزيد</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-wheelchair"></i> التهاب المفاصل</h3>
+                <p>التهاب المفاصل هو تورم وآلام في المفاصل يمكن أن يؤثر على نطاق الحركة. اكتشف أنواعه المختلفة وطرق علاجه المتاحة.</p>
+                <a href="medical-info.html#arthritis" class="read-more">
+                    <span>قراءة المزيد</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+            
+            <div class="info-card">
+                <h3><i class="fas fa-running"></i> إصابات الرباط الصليبي</h3>
+                <p>إصابات الرباط الصليبي الأمامي شائعة بين الرياضيين. تعرف على كيفية حدوثها وأعراضها وطرق العلاج والوقاية منها.</p>
+                <a href="medical-info.html#acl" class="read-more">
+                    <span>قراءة المزيد</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- قبل قسم التقييمات -->
+<section id="reviews" class="reviews">
     <!-- Reviews Section -->
     <section id="reviews" class="reviews">
         <div class="container">
