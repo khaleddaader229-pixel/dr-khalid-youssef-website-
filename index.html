@@ -1307,62 +1307,85 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>تواصل معنا | حجز موعد مع دكتور عظام في خميس مشيط</h2>
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>تواصل معنا | حجز موعد مع دكتور عظام في خميس مشيط</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> العنوان: خميس مشيط، المملكة العربية السعودية</p>
+                    <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:+966565245159">+966 56 524 5159</a></p>
+                    <p><i class="fas fa-envelope"></i> الإيميل: <a href="mailto:khaliddaader29@gmail.com">khaliddaader29@gmail.com</a></p>
+                    <p><i class="fas fa-clock"></i> أوقات العمل: السبت إلى الخميس - 4 PM إلى 9 PM</p>
+                </div>
+                
+                <h3>وسائل التواصل الاجتماعي</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/966565245159" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>معلومات التواصل</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> العنوان: خميس مشيط، المملكة العربية السعودية</p>
-                        <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:+966565245159">+966 56 524 5159</a></p>
-                        <p><i class="fas fa-envelope"></i> الإيميل: <a href="mailto:khaliddaader29@gmail.com">khaliddaader29@gmail.com</a></p>
-                        <p><i class="fas fa-clock"></i> أوقات العمل: السبت إلى الخميس - 4 PM إلى 9 PM</p>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>احجز موعدك الآن</h3>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name">الاسم بالكامل</label>
+                        <input type="text" id="name" required>
                     </div>
-                    
-                    <h3>وسائل التواصل الاجتماعي</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/966565245159" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" required>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <h3>احجز موعدك الآن</h3>
-                    <form id="appointmentForm">
-                        <div class="form-group">
-                            <label for="name">الاسم بالكامل</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">رقم الهاتف</label>
-                            <input type="tel" id="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">البريد الإلكتروني</label>
-                            <input type="email" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">نوع الخدمة المطلوبة</label>
-                            <select id="service" required>
-                                <option value="">اختر الخدمة</option>
-                                <option value="bones">جراحة العظام والكسور</option>
-                                <option value="sports">إصابات الملاعب</option>
-                                <option value="joints">جراحة المفاصل</option>
-                                <option value="arthroscopy">جراحة المناظير</option>
-                                <option value="consultation">استشارة طبية</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">الرسالة</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">إرسال الحجز</button>
-                    </form>
-                </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">نوع الخدمة المطلوبة</label>
+                        <select id="service" required>
+                            <option value="">اختر الخدمة</option>
+                            <option value="جراحة العظام والكسور">جراحة العظام والكسور</option>
+                            <option value="إصابات الملاعب">إصابات الملاعب</option>
+                            <option value="جراحة المفاصل">جراحة المفاصل</option>
+                            <option value="جراحة المناظير">جراحة المناظير</option>
+                            <option value="استشارة طبية">استشارة طبية</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">إرسال الحجز</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Script to send form data to WhatsApp -->
+<script>
+document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let service = document.getElementById("service").value;
+    let message = document.getElementById("message").value;
+
+    let whatsappMessage = `السلام عليكم، أود حجز موعد:\n\nالاسم: ${name}\nالهاتف: ${phone}\nالبريد: ${email}\nالخدمة: ${service}\nالرسالة: ${message}`;
+
+    let url = `https://wa.me/966565245159?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(url, "_blank");
+});
+</script>
             </div>
         </div>
     </section>
