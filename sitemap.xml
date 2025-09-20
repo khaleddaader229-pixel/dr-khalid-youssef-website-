@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://username.github.io/repository-name/</loc>
+      <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/</loc>
       <lastmod>2023-12-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://username.github.io/repository-name/#about</loc>
+      <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/arthroscopy.html</loc>
       <lastmod>2023-12-01</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.9</priority>
    </url>
    <url>
-      <loc>https://username.github.io/repository-name/#services</loc>
+      <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/bones-surgery.html</loc>
       <lastmod>2023-12-01</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.9</priority>
    </url>
    <url>
-      <loc>https://username.github.io/repository-name/#medical-info</loc>
+      <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/joints-surgery.html</loc>
       <lastmod>2023-12-01</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.9</priority>
    </url>
    <url>
-      <loc>https://username.github.io/repository-name/#videos</loc>
+      <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/medical-info.html</loc>
       <lastmod>2023-12-01</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
+      <priority>0.9</priority>
    </url>
    <url>
-      <loc>https://username.github.io/repository-name/#contact</loc>
+      <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/sports-injuries.html</loc>
+      <lastmod>2023-12-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/Exercises.html</loc>
       <lastmod>2023-12-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
