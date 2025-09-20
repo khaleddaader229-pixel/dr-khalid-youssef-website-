@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إرسال فيديو عبر الواتساب - د. خالد يوسف</title>
+    <title>نظام إرسال فيديو عبر الواتساب - د. خالد يوسف</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -18,7 +18,7 @@
             background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
             color: #333;
             line-height: 1.6;
-            padding: 0;
+            padding: 20px;
             min-height: 100vh;
         }
         
@@ -29,8 +29,6 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             overflow: hidden;
-            margin-top: 20px;
-            margin-bottom: 20px;
         }
         
         header {
@@ -131,11 +129,13 @@
         
         .video-container {
             position: relative;
+            width: 100%;
             padding-top: 56.25%; /* 16:9 Aspect Ratio */
             background: #000;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
         }
         
         .video-container iframe {
@@ -203,9 +203,9 @@
             text-align: center;
             padding: 25px;
             background: #f0f7ff;
-            border-top: 1px solid #ddd;
-            margin-top: 20px;
             border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
         }
         
         .rating-section h3 {
@@ -337,6 +337,16 @@
             margin-bottom: 5px;
         }
         
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
         @media (max-width: 768px) {
             .content {
                 flex-direction: column;
@@ -353,6 +363,10 @@
             .nav-links a {
                 margin: 5px;
                 padding: 8px 15px;
+            }
+            
+            body {
+                padding: 10px;
             }
         }
     </style>
@@ -393,11 +407,11 @@
                         <span>إصابات الملاعب</span>
                     </div>
                     <div class="video-option" data-video="https://www.youtube.com/embed/6ACl8s_tBzE">
-                        <i class="fas fa-knee"></i>
+                        <i class="fas fa-running"></i>
                         <span>مناظير الركبة</span>
                     </div>
                     <div class="video-option" data-video="https://www.youtube.com/embed/6ACl8s_tBzE">
-                        <i class="fas fa-shoulder"></i>
+                        <i class="fas fa-user-injured"></i>
                         <span>مناظير الكتف</span>
                     </div>
                 </div>
@@ -461,6 +475,10 @@
                     </button>
                 </form>
                 
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i> تم إعداد الرسالة بنجاح! سيتم فتح الواتساب الآن.
+                </div>
+                
                 <div class="rating-section">
                     <h3><i class="fas fa-star"></i> شكراً لمشاهدة الفيديو</h3>
                     <p>يسعدنا تقييمك للدكتور خالد يوسف وخدمات مركز العظام والمفاصل</p>
@@ -479,50 +497,54 @@
     </div>
 
     <script>
-        // تغيير الفيديو عند اختيار نوع مختلف
-        document.querySelectorAll('.video-option').forEach(option => {
-            option.addEventListener('click', function() {
-                document.querySelectorAll('.video-option').forEach(opt => opt.classList.remove('selected'));
-                this.classList.add('selected');
-                
-                const videoUrl = this.getAttribute('data-video');
-                document.querySelector('.video-container iframe').src = videoUrl;
-                
-                // تحديث نوع الفيديو في القائمة المنسدلة
-                const videoType = this.querySelector('span').textContent;
-                document.getElementById('videoType').value = videoType;
+        // تعريف الدوال أولاً قبل استخدامها
+        function initVideoOptions() {
+            // تغيير الفيديو عند اختيار نوع مختلف
+            document.querySelectorAll('.video-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.video-option').forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    const videoUrl = this.getAttribute('data-video');
+                    document.querySelector('.video-container iframe').src = videoUrl;
+                    
+                    // تحديث نوع الفيديو في القائمة المنسدلة
+                    const videoType = this.querySelector('span').textContent;
+                    document.getElementById('videoType').value = videoType;
+                });
             });
-        });
+        }
         
-        // إرسال عبر الواتساب
-        document.getElementById('whatsappBtn').addEventListener('click', function() {
-            // الحصول على القيم من النموذج
-            const patientName = document.getElementById('patientName').value;
-            const patientPhone = document.getElementById('patientPhone').value;
-            const videoType = document.getElementById('videoType').value;
-            const message = document.getElementById('message').value;
-            
-            if (!patientName || !patientPhone) {
-                alert('يرجى إدخال اسم المريض ورقم الهاتف');
-                return;
-            }
-            
-            // تنظيف رقم الهاتف وإزالة أي أحرف غير رقمية باستثناء علامة +
-            let cleanPhone = patientPhone.replace(/[^0-9+]/g, '');
-            
-            // إذا لم يبدأ الرقم بـ +، نضيفها
-            if (!cleanPhone.startsWith('+')) {
-                cleanPhone = '+' + cleanPhone;
-            }
-            
-            // الحصول على رابط الفيديو الحالي
-            const videoUrl = document.querySelector('.video-container iframe').src;
-            
-            // رابط التقييم
-            const ratingUrl = 'https://maps.app.goo.gl/pYAuYQcZZhF9odNs5?g_st=ipc';
-            
-            // نص الرسالة
-            const fullMessage = `مرحباً ${patientName}،
+        function initWhatsAppButton() {
+            // إرسال عبر الواتساب
+            document.getElementById('whatsappBtn').addEventListener('click', function() {
+                // الحصول على القيم من النموذج
+                const patientName = document.getElementById('patientName').value;
+                const patientPhone = document.getElementById('patientPhone').value;
+                const videoType = document.getElementById('videoType').value;
+                const message = document.getElementById('message').value;
+                
+                if (!patientName || !patientPhone) {
+                    alert('يرجى إدخال اسم المريض ورقم الهاتف');
+                    return;
+                }
+                
+                // تنظيف رقم الهاتف وإزالة أي أحرف غير رقمية باستثناء علامة +
+                let cleanPhone = patientPhone.replace(/[^0-9+]/g, '');
+                
+                // إذا لم يبدأ الرقم بـ +، نضيفها
+                if (!cleanPhone.startsWith('+')) {
+                    cleanPhone = '+' + cleanPhone;
+                }
+                
+                // الحصول على رابط الفيديو الحالي
+                const videoUrl = document.querySelector('.video-container iframe').src;
+                
+                // رابط التقييم
+                const ratingUrl = 'https://maps.app.goo.gl/pYAuYQcZZhF9odNs5?g_st=ipc';
+                
+                // نص الرسالة
+                const fullMessage = `مرحباً ${patientName}،
 
 ${message}
 
@@ -535,18 +557,32 @@ ${ratingUrl}
 شكراً لك،
 مركز العظام والمفاصل`;
 
-            // تشفير الرسالة للرابط
-            const encodedMessage = encodeURIComponent(fullMessage);
+                // تشفير الرسالة للرابط
+                const encodedMessage = encodeURIComponent(fullMessage);
+                
+                // إنشاء رابط الواتساب
+                const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+                
+                // عرض رسالة النجاح
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // فتح الواتساب في نافذة جديدة بعد تأخير بسيط
+                setTimeout(function() {
+                    window.open(whatsappUrl, '_blank');
+                }, 1000);
+                
+                // رسالة في console للتوضيح
+                console.log(`تم إرسال الرسالة إلى: ${patientName} (${cleanPhone})`);
+                console.log('رابط التقييم: https://maps.app.goo.gl/pYAuYQcZZhF9odNs5?g_st=ipc');
+            });
+        }
+        
+        // تهيئة الصفحة عند التحميل
+        document.addEventListener('DOMContentLoaded', function() {
+            initVideoOptions();
+            initWhatsAppButton();
             
-            // إنشاء رابط الواتساب
-            const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
-            
-            // فتح الواتساب في نافذة جديدة
-            window.open(whatsappUrl, '_blank');
-            
-            // رسالة في console للتوضيح
-            console.log(`تم إرسال الرسالة إلى: ${patientName} (${cleanPhone})`);
-            console.log('رابط التقييم: https://maps.app.goo.gl/pYAuYQcZZhF9odNs5?g_st=ipc');
+            console.log('تم تحميل الصفحة بنجاح!');
         });
     </script>
 </body>
