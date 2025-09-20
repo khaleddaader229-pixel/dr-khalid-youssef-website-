@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إرسال فيديو عبر الواتساب - د. خالد يوسف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1a73e8, #0d47a1);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .clinic-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .clinic-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+        }
+        
+        .clinic-logo i {
+            font-size: 40px;
+            color: #1a73e8;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header-description {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            background: #0d62c9;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        
+        .video-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        
+        .form-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            color: #1a73e8;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1a73e8;
+            font-size: 22px;
+            font-weight: 700;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a73e8;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            border-color: #1a73e8;
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        button {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 16px 25px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background: #128C7E;
+        }
+        
+        .rating-section {
+            text-align: center;
+            padding: 25px;
+            background: #f0f7ff;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        
+        .rating-section h3 {
+            color: #1a73e8;
+            margin-bottom: 15px;
+        }
+        
+        .rating-link {
+            display: inline-block;
+            background: #0d62c9;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 15px 0;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(13, 98, 201, 0.3);
+        }
+        
+        .rating-link:hover {
+            transform: translateY(-3px);
+            background: #0954b0;
+            box-shadow: 0 6px 20px rgba(13, 98, 201, 0.4);
+        }
+        
+        .doctor-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .doctor-avatar {
+            width: 70px;
+            height: 70px;
+            background: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+        }
+        
+        .doctor-avatar i {
+            font-size: 30px;
+            color: #1a73e8;
+        }
+        
+        .doctor-details {
+            flex: 1;
+        }
+        
+        .doctor-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1a73e8;
+        }
+        
+        .doctor-specialty {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a73e8;
+            color: white;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-right: 4px solid #1a73e8;
+        }
+        
+        .instructions h4 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            padding-right: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        
+        .video-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .video-option {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .video-option:hover {
+            border-color: #1a73e8;
+            background: #f0f7ff;
+        }
+        
+        .video-option.selected {
+            border-color: #1a73e8;
+            background: #e3f2fd;
+        }
+        
+        .video-option i {
+            font-size: 24px;
+            color: #1a73e8;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+            }
+            
+            .nav-links a {
+                margin: 5px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="clinic-info">
+                <div class="clinic-logo">
+                    <i class="fas fa-bone"></i>
+                </div>
+                <div>
+                    <h1>مركز العظام والمفاصل</h1>
+                    <p class="header-description">نظام إرسال الفيديوهات التعليمية عبر الواتساب</p>
+                </div>
+            </div>
+        </header>
+        
+        <div class="nav-links">
+            <a href="https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="#"><i class="fas fa-user-md"></i> عن الدكتور</a>
+            <a href="#"><i class="fas fa-stethoscope"></i> الخدمات</a>
+            <a href="#"><i class="fas fa-phone"></i> اتصل بنا</a>
+        </div>
+        
+        <div class="content">
+            <div class="video-section">
+                <h2 class="section-title"><i class="fas fa-video"></i> الفيديو التعليمي</h2>
+                
+                <h4>اختر نوع الفيديو:</h4>
+                <div class="video-options">
+                    <div class="video-option selected" data-video="https://www.youtube.com/embed/6ACl8s_tBzE">
+                        <i class="fas fa-bone"></i>
+                        <span>كسور العظام</span>
+                    </div>
+                    <div class="video-option" data-video="https://www.youtube.com/embed/6ACl8s_tBzE">
+                        <i class="fas fa-wheelchair"></i>
+                        <span>إصابات الملاعب</span>
+                    </div>
+                    <div class="video-option" data-video="https://www.youtube.com/embed/6ACl8s_tBzE">
+                        <i class="fas fa-knee"></i>
+                        <span>مناظير الركبة</span>
+                    </div>
+                    <div class="video-option" data-video="https://www.youtube.com/embed/6ACl8s_tBzE">
+                        <i class="fas fa-shoulder"></i>
+                        <span>مناظير الكتف</span>
+                    </div>
+                </div>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/6ACl8s_tBzE" allowfullscreen></iframe>
+                </div>
+                
+                <div class="doctor-info">
+                    <div class="doctor-avatar">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="doctor-details">
+                        <div class="doctor-name">الدكتور خالد يوسف</div>
+                        <div class="doctor-specialty">أخصائي أول جراحة العظام والكسور والمفاصل<br>إصابات الملاعب ومناظير الركبة والكتف</div>
+                    </div>
+                </div>
+                
+                <div class="instructions">
+                    <h4><i class="fas fa-info-circle"></i> تعليمات الإرسال:</h4>
+                    <ol>
+                        <li>أدخل رقم المريض مع مفتاح الدولة (مثال: 966512345678+)</li>
+                        <li>اضغط على زر "إرسال عبر الواتساب"</li>
+                        <li>سيتم فتح تطبيق الواتساب مع رسالة جاهزة تحتوي على رابط الفيديو</li>
+                        <li>أضف أي ملاحظات ثم أرسل الرسالة للمريض</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2 class="section-title"><i class="fas fa-paper-plane"></i> إرسال الفيديو عبر الواتساب</h2>
+                <form id="sendForm">
+                    <div class="form-group">
+                        <label for="patientName"><i class="fas fa-user"></i> اسم المريض</label>
+                        <input type="text" id="patientName" placeholder="أدخل اسم المريض" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="patientPhone"><i class="fas fa-phone"></i> رقم الهاتف (مع مفتاح الدولة)</label>
+                        <input type="text" id="patientPhone" placeholder="مثال: 966512345678+" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="videoType"><i class="fas fa-film"></i> نوع الفيديو</label>
+                        <select id="videoType">
+                            <option value="كسور العظام">كسور العظام</option>
+                            <option value="إصابات الملاعب">إصابات الملاعب</option>
+                            <option value="مناظير الركبة">مناظير الركبة</option>
+                            <option value="مناظير الكتف">مناظير الكتف</option>
+                            <option value="جراحة العظام">جراحة العظام</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-envelope"></i> رسالة مخصصة (اختياري)</label>
+                        <textarea id="message" placeholder="اكتب رسالة شخصية للمريض هنا...">شاهد هذا الفيديو التعليمي المفيد عن جراحة العظام والمفاصل، وبعد المشاهدة يمكنك تقييم الدكتور خالد يوسف على جوجل ماب عبر الرابط المرفق.</textarea>
+                    </div>
+                    
+                    <button type="button" id="whatsappBtn">
+                        <i class="fab fa-whatsapp"></i> إرسال عبر الواتساب
+                    </button>
+                </form>
+                
+                <div class="rating-section">
+                    <h3><i class="fas fa-star"></i> شكراً لمشاهدة الفيديو</h3>
+                    <p>يسعدنا تقييمك للدكتور خالد يوسف وخدمات مركز العظام والمفاصل</p>
+                    <a href="https://maps.app.goo.gl/pYAuYQcZZhF9odNs5?g_st=ipc" class="rating-link" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i> تقييم الدكتور على جوجل ماب
+                    </a>
+                    <p>سيتم توجيهك إلى صفحة التقييم على جوجل ماب</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 مركز العظام والمفاصل - جميع الحقوق محفوظة</p>
+            <p>للاستفسار: +966 12 345 6789 | البريد الإلكتروني: info@example.com</p>
+        </footer>
+    </div>
+
+    <script>
+        // تغيير الفيديو عند اختيار نوع مختلف
+        document.querySelectorAll('.video-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.video-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                const videoUrl = this.getAttribute('data-video');
+                document.querySelector('.video-container iframe').src = videoUrl;
+                
+                // تحديث نوع الفيديو في القائمة المنسدلة
+                const videoType = this.querySelector('span').textContent;
+                document.getElementById('videoType').value = videoType;
+            });
+        });
+        
+        // إرسال عبر الواتساب
+        document.getElementById('whatsappBtn').addEventListener('click', function() {
+            // الحصول على القيم من النموذج
+            const patientName = document.getElementById('patientName').value;
+            const patientPhone = document.getElementById('patientPhone').value;
+            const videoType = document.getElementById('videoType').value;
+            const message = document.getElementById('message').value;
+            
+            if (!patientName || !patientPhone) {
+                alert('يرجى إدخال اسم المريض ورقم الهاتف');
+                return;
+            }
+            
+            // تنظيف رقم الهاتف وإزالة أي أحرف غير رقمية باستثناء علامة +
+            let cleanPhone = patientPhone.replace(/[^0-9+]/g, '');
+            
+            // إذا لم يبدأ الرقم بـ +، نضيفها
+            if (!cleanPhone.startsWith('+')) {
+                cleanPhone = '+' + cleanPhone;
+            }
+            
+            // الحصول على رابط الفيديو الحالي
+            const videoUrl = document.querySelector('.video-container iframe').src;
+            
+            // رابط التقييم
+            const ratingUrl = 'https://maps.app.goo.gl/pYAuYQcZZhF9odNs5?g_st=ipc';
+            
+            // نص الرسالة
+            const fullMessage = `مرحباً ${patientName}،
+
+${message}
+
+نوع الفيديو: ${videoType}
+رابط الفيديو: ${videoUrl}
+
+بعد مشاهدة الفيديو، يرجى تقييم الدكتور خالد يوسف على جوجل ماب:
+${ratingUrl}
+
+شكراً لك،
+مركز العظام والمفاصل`;
+
+            // تشفير الرسالة للرابط
+            const encodedMessage = encodeURIComponent(fullMessage);
+            
+            // إنشاء رابط الواتساب
+            const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+            
+            // فتح الواتساب في نافذة جديدة
+            window.open(whatsappUrl, '_blank');
+            
+            // رسالة في console للتوضيح
+            console.log(`تم إرسال الرسالة إلى: ${patientName} (${cleanPhone})`);
+            console.log('رابط التقييم: https://maps.app.goo.gl/pYAuYQcZZhF9odNs5?g_st=ipc');
+        });
+    </script>
+</body>
+</html>
