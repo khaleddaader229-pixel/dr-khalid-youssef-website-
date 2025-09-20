@@ -8,9 +8,11 @@
     <meta name="google-site-verification" content="ZvcNnFXI4z_hsv5qDrcnuLznPRczpJW0CMh7syWsQhE" />
 
     <!-- وسوم Meta الأساسية -->
-    <meta name="description" content="د. خالد حسن السعيد يوسف - أخصائي أول جراحة العظام والمفاصل في خميس مشيط. علاج الكسور، إصابات الملاعب، جراحة المفاصل والمناظير.">
-    <meta name="keywords" content="دكتور عظام, جراحة عظام, مفاصل, كسور, إصابات ملاعب, خميس مشيط, طبيب عظام, جراحة مفاصل, مناظير عظام, أفضل دكتور عظام في خميس مشيط">
+    <meta name="description" content="د. خالد حسن السعيد يوسف - أفضل أخصائي جراحة العظام والمفاصل في خميس مشيط. علاج الكسور، إصابات الملاعب، جراحة المفاصل والمناظير. احجز موعدك الآن.">
+    <meta name="keywords" content="دكتور عظام, دكتور عظام في خميس مشيط, جراحة عظام, مفاصل, كسور, إصابات ملاعب, خميس مشيط, طبيب عظام, جراحة مفاصل, مناظير عظام, أفضل دكتور عظام في خميس مشيط, علاج آلام الظهر, استبدال مفصل الركبة, منظار الركبة">
     <meta name="author" content="د. خالد حسن السعيد يوسف">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
 
     <!-- وسوم Open Graph -->
     <meta property="og:title" content="د. خالد حسن السعيد يوسف - أخصائي أول جراحة العظام والمفاصل">
@@ -29,7 +31,46 @@
     <!-- تحسينات SEO -->
     <link rel="canonical" href="https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/">
 
-    <title>د. خالد حسن السعيد يوسف - أخصائي أول جراحة العظام والمفاصل | خميس مشيط</title>
+    <title>د. خالد حسن السعيد يوسف - أفضل دكتور عظام ومفاصل في خميس مشيط | علاج الكسور وإصابات الملاعب</title>
+
+    <!-- إضافة Schema Markup للطبيب -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "name": "د. خالد حسن السعيد يوسف",
+      "description": "أخصائي أول جراحة العظام والمفاصل في خميس مشيط. علاج الكسور، إصابات الملاعب، جراحة المفاصل والمناظير.",
+      "medicalSpecialty": "جراحة العظام والمفاصل",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "خميس مشيط",
+        "addressRegion": "منطقة عسير",
+        "addressCountry": "المملكة العربية السعودية"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "18.3058056",
+        "longitude": "42.6973993"
+      },
+      "telephone": "+966565245159",
+      "url": "https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/",
+      "priceRange": "$$",
+      "image": "https://i.postimg.cc/YCrpr9xQ/IMG-3607.jpg",
+      "availableService": [
+        "جراحة العظام والكسور",
+        "إصابات الملاعب",
+        "جراحة المفاصل",
+        "جراحة المناظير"
+      ],
+      "medicalProcedure": [
+        "استبدال مفصل الركبة",
+        "استبدال مفصل الورك",
+        "منظار الركبة",
+        "منظار الكتف"
+      ],
+      "openingHours": "Mo, Tu, We, Th, Sa 16:00-21:00"
+    }
+    </script>
 
     <!-- Preload للموارد المهمة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +80,7 @@
     <!-- الروابط الخارجية -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
     <style>
         :root {
             --primary: #1a73e8;
@@ -122,6 +164,23 @@
         
         nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb .separator {
+            margin: 0 8px;
+            color: #6c757d;
         }
         
         /* Hero Section */
@@ -542,6 +601,73 @@
             margin-right: 8px;
         }
         
+        /* أنماط قسم المدونة */
+        .blog {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-content h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .blog-content h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-content h3 a:hover {
+            color: var(--primary);
+        }
+        
+        .blog-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
         /* Reviews Section */
         .reviews {
             background-color: white;
@@ -934,6 +1060,14 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+            
+            .breadcrumb {
+                padding: 10px 15px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -950,6 +1084,7 @@
                     <li><a href="#about"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
                     <li><a href="#services"><i class="fas fa-stethoscope"></i> الخدمات</a></li>
                     <li><a href="#medical-info"><i class="fas fa-heartbeat"></i> معلومات طبية</a></li>
+                    <li><a href="#blog"><i class="fas fa-newspaper"></i> المقالات</a></li>
                     <li><a href="#videos"><i class="fas fa-video"></i> فيديوهات</a></li>
                     <li><a href="#reviews"><i class="fas fa-star"></i> التقييمات</a></li>
                     <li><a href="#contact"><i class="fas fa-phone"></i> التواصل</a></li>
@@ -958,15 +1093,24 @@
         </div>
     </header>
 
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="#home">الرئيسية</a> 
+            <span class="separator">/</span> 
+            <span>الصفحة الحالية</span>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-content">
             <div class="profile-img">
-                <img src="https://i.postimg.cc/YCrpr9xQ/IMG-3607.jpg" alt="د. خالد حسن السعيد يوسف - أفضل دكتور عظام ومفاصل في خميس مشيط">
+                <img src="https://i.postimg.cc/YCrpr9xQ/IMG-3607.jpg" alt="د. خالد حسن السعيد يوسف - أفضل دكتور عظام ومفاصل في خميس مشيط" width="180" height="180" loading="eager">
             </div>
-            <h1>د. خالد حسن السعيد يوسف - أخصائي أول جراحة العظام والمفاصل</h1>
-            <h2>أخصائي أول جراحة العظام والكسور وإصابات الملاعب والمفاصل</h2>
-            <p>ماجستير جراحة العظام - زميل كلية الجراحين المصرية</p>
+            <h1>د. خالد حسن السعيد يوسف - أفضل أخصائي جراحة العظام والمفاصل في خميس مشيط</h1>
+            <h2>استشاري جراحة العظام والكسور وإصابات الملاعب والمفاصل - زميل كلية الجراحين المصرية</h2>
+            <p>ماجستير جراحة العظام - زميل كلية الجراحين المصرية - أخصائي أول جراحة العظام في مركز الثمال الطبي</p>
             <div class="hero-buttons">
                 <a href="tel:+966565245159" class="btn">
                     <i class="fas fa-phone"></i> اتصل الآن
@@ -1106,247 +1250,109 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>مقالات طبية عن أمراض العظام والمفاصل</h2>
+                <p>أحدث المقالات والنصائح الطبية للعناية بصحة العظام والمفاصل</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x200" alt="هشاشة العظام - الأسباب والعلاج" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3><a href="article1.html">هشاشة العظام - الأسباب والعلاج والوقاية</a></h3>
+                        <p>تعرف على أسباب هشاشة العظام وأعراضها وطرق علاجها والوقاية منها في هذا المقال الشامل.</p>
+                        <a href="article1.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x200" alt="إصابات الرباط الصليبي - العلاج والتأهيل" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3><a href="article2.html">إصابات الرباط الصليبي - العلاج والتأهيل</a></h3>
+                        <p>كل ما تحتاج معرفته عن إصابات الرباط الصليبي، الأعراض، التشخيص، وبرامج العلاج والتأهيل.</p>
+                        <a href="article2.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x200" alt="ألم المفاصل - الأسباب والعلاجات" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3><a href="article3.html">ألم المفاصل - الأسباب والعلاجات الحديثة</a></h3>
+                        <p>دليل شامل لألم المفاصل، من الأسباب الشائعة إلى أحدث طرق العلاج المتاحة في عيادة الدكتور خالد يوسف.</p>
+                        <a href="article3.html" class="read-more">اقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Videos Section -->
-<section id="videos" class="videos">
-    <div class="container">
-        <div class="section-title">
-            <h2>فيديوهات طبية</h2>
-            <p>مقاطع فيديو تعليمية وتوعوية حول صحة العظام والمفاصل</p>
-        </div>
-        <div class="videos-grid">
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://i.postimg.cc/63wXwBYb/IMG-4468.jpg" alt="أنواع الحقن المفصلي">
-                    <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz')">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>أنواع الحقن المفصلي</h3>
-                    <p>متى نحتاج الحقن المفصلي؟</p>
-                    <a href="https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz" target="_blank" class="video-link">
-                        <i class="fab fa-instagram"></i> مشاهدة على انستجرام
-                    </a>
-                </div>
+    <section id="videos" class="videos">
+        <div class="container">
+            <div class="section-title">
+                <h2>فيديوهات طبية</h2>
+                <p>مقاطع فيديو تعليمية وتوعوية حول صحة العظام والمفاصل</p>
             </div>
-            
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <img src="https://i.postimg.cc/fLKhR1Pz/IMG-4469.jpg" alt="آلام القدم المزمنة">
-                    <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==')">
-                        <i class="fas fa-play"></i>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="https://i.postimg.cc/63wXwBYb/IMG-4468.jpg" alt="أنواع الحقن المفصلي">
+                        <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>أنواع الحقن المفصلي</h3>
+                        <p>متى نحتاج الحقن المفصلي؟</p>
+                        <a href="https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz" target="_blank" class="video-link">
+                            <i class="fab fa-instagram"></i> مشاهدة على انستجرام
+                        </a>
                     </div>
                 </div>
-                <div class="video-info">
-                    <h3>آلام القدم المزمنة</h3>
-                    <p>أسباب الام القدم والشوكة العظمية</p>
-                    <a href="https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==" target="_blank" class="video-link">
-                        <i class="fab fa-instagram"></i> مشاهدة على انستجرام
-                    </a>
-                </div>
-            </div>
-            
-            <!-- بطاقة التمارين العلاجية الجديدة -->
-            <div class="video-card exercises-card">
-                <div class="video-thumbnail">
-                    <img src="https://i.postimg.cc/fLKhR1Pz/IMG-4469.jpg" alt="تمارين العظام">
-                    <div class="play-button" onclick="location.href='exercises.html'">
-                        <i class="fas fa-dumbbell"></i>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="https://i.postimg.cc/fLKhR1Pz/IMG-4469.jpg" alt="آلام القدم المزمنة">
+                        <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==')">
+                            <i class="fas fa-play"></i>
+                        </div>
                     </div>
-                    <div class="exercises-overlay">
-                        <h4>تمارين علاجية شاملة</h4>
-                        <p>للرقبة، الكتف، الظهر، الركبة، الكاحل والقدم</p>
+                    <div class="video-info">
+                        <h3>آلام القدم المزمنة</h3>
+                        <p>أسباب الام القدم والشوكة العظمية</p>
+                        <a href="https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==" target="_blank" class="video-link">
+                            <i class="fab fa-instagram"></i> مشاهدة على انستجرam
+                        </a>
                     </div>
                 </div>
-                <div class="video-info">
-                    <h3>التمارين العلاجية</h3>
-                    <p>مجموعة تمارين متخصصة لمشاكل العظام المختلفة</p>
-                    <a href="exercises.html" class="video-link exercises-link">
-                        <i class="fas fa-dumbbell"></i> استكشاف التمارين العلاجية
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    /* تنسيقات خاصة ببطاقة التمارين العلاجية */
-    .exercises-card {
-        position: relative;
-        border: 2px solid #1a73e8;
-    }
-    
-    .exercises-card .play-button {
-        background: rgba(26, 115, 232, 0.9);
-    }
-    
-    .exercises-card .play-button:hover {
-        background: #1a73e8;
-        transform: scale(1.1);
-    }
-    
-    .exercises-card .play-button i {
-        color: white;
-        margin-left: 0;
-    }
-    
-    .exercises-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-        color: white;
-        padding: 15px;
-        text-align: center;
-    }
-    
-    .exercise-overlay h4 {
-        margin: 0 0 5px 0;
-        font-size: 16px;
-    }
-    
-    .exercises-overlay p {
-        margin: 0;
-        font-size: 12px;
-        opacity: 0.9;
-    }
-    
-    .exercises-link {
-        background: #1a73e8;
-        color: white !important;
-        padding: 8px 15px;
-        border-radius: 4px;
-        display: inline-block;
-        margin-top: 10px;
-        transition: background 0.3s;
-    }
-    
-    .exercises-link:hover {
-        background: #0d47a1;
-        text-decoration: none;
-    }
-    
-    /* تنسيقات عامة للفيديوهات (في حال لم تكن موجودة مسبقاً) */
-    .videos {
-        padding: 60px 0;
-        background: #f8f9fa;
-    }
-    
-    .section-title {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    .section-title h2 {
-        color: #1a73e8;
-        font-size: 32px;
-        margin-bottom: 15px;
-    }
-    
-    .section-title p {
-        color: #666;
-        font-size: 18px;
-    }
-    
-    .videos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-    }
-    
-    .video-card {
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .video-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-    
-    .video-thumbnail {
-        position: relative;
-        height: 200px;
-        overflow: hidden;
-    }
-    
-    .video-thumbnail img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    
-    .play-button:hover {
-        background: rgba(255, 255, 255, 1);
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-    
-    .play-button i {
-        color: #1a73e8;
-        font-size: 20px;
-        margin-left: 4px;
-    }
-    
-    .video-info {
-        padding: 20px;
-    }
-    
-    .video-info h3 {
-        color: #1a73e8;
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 20px;
-    }
-    
-    .video-info p {
-        color: #666;
-        margin-bottom: 15px;
-        line-height: 1.5;
-    }
-    
-    .video-link {
-        color: #1a73e8;
-        text-decoration: none;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        transition: color 0.3s;
-    }
-    
-    .video-link:hover {
-        color: #0d47a1;
-    }
-</style>
-
-<script>
-    // دالة فتح الفيديو في حالة استخدامها
-    function openVideo(url) {
-        window.open(url, '_blank');
-    }
-</script>
-</div>
+                
+                <!-- بطاقة التمارين العلاجية الجديدة -->
+                <div class="video-card exercises-card">
+                    <div class="video-thumbnail">
+                        <img src="https://i.postimg.cc/fLKhR1Pz/IMG-4469.jpg" alt="تمارين العظام">
+                        <div class="play-button" onclick="location.href='exercises.html'">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="exercises-overlay">
+                            <h4>تمارين علاجية شاملة</h4>
+                            <p>للرقبة، الكتف، الظهر، الركبة، الكاحل والقدم</p>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>التمارين العلاجية</h3>
+                        <p>مجموعة تمارين متخصصة لمشاكل العظام المختلفة</p>
+                        <a href="exercises.html" class="video-link exercises-link">
+                            <i class="fas fa-dumbbell"></i> استكشاف التمارين العلاجية
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1494,85 +1500,64 @@
     </section>
 
     <!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <div class="section-title">
-            <h2>تواصل معنا | حجز موعد مع دكتور عظام في خميس مشيط</h2>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>معلومات التواصل</h3>
-                <div class="contact-details">
-                    <p><i class="fas fa-map-marker-alt"></i> العنوان: خميس مشيط، المملكة العربية السعودية</p>
-                    <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:+966565245159">+966 56 524 5159</a></p>
-                    <p><i class="fas fa-envelope"></i> الإيميل: <a href="mailto:khaliddaader29@gmail.com">khaliddaader29@gmail.com</a></p>
-                    <p><i class="fas fa-clock"></i> أوقات العمل: السبت إلى الخميس - 4 PM إلى 9 PM</p>
-                </div>
-                
-                <h3>وسائل التواصل الاجتماعي</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://wa.me/966565245159" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                </div>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>تواصل معنا | حجز موعد مع دكتور عظام في خميس مشيط</h2>
             </div>
-
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h3>احجز موعدك الآن</h3>
-                <form id="appointmentForm">
-                    <div class="form-group">
-                        <label for="name">الاسم بالكامل</label>
-                        <input type="text" id="name" required>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> العنوان: خميس مشيط، المملكة العربية السعودية</p>
+                        <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:+966565245159">+966 56 524 5159</a></p>
+                        <p><i class="fas fa-envelope"></i> الإيميل: <a href="mailto:khaliddaader29@gmail.com">khaliddaader29@gmail.com</a></p>
+                        <p><i class="fas fa-clock"></i> أوقات العمل: السبت إلى الخميس - 4 PM إلى 9 PM</p>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">رقم الهاتف</label>
-                        <input type="tel" id="phone" required>
+                    
+                    <h3>وسائل التواصل الاجتماعي</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/966565245159" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
-                    <div class="form-group">
-                        <label for="email">البريد الإلكتروني</label>
-                        <input type="email" id="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">نوع الخدمة المطلوبة</label>
-                        <select id="service" required>
-                            <option value="">اختر الخدمة</option>
-                            <option value="جراحة العظام والكسور">جراحة العظام والكسور</option>
-                            <option value="إصابات الملاعب">إصابات الملاعب</option>
-                            <option value="جراحة المفاصل">جراحة المفاصل</option>
-                            <option value="جراحة المناظير">جراحة المناظير</option>
-                            <option value="استشارة طبية">استشارة طبية</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">الرسالة</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">إرسال الحجز</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+                </div>
 
-<!-- Script to send form data to WhatsApp -->
-<script>
-document.getElementById("appointmentForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let email = document.getElementById("email").value;
-    let service = document.getElementById("service").value;
-    let message = document.getElementById("message").value;
-
-    let whatsappMessage = `السلام عليكم، أود حجز موعد:\n\nالاسم: ${name}\nالهاتف: ${phone}\nالبريد: ${email}\nالخدمة: ${service}\nالرسالة: ${message}`;
-
-    let url = `https://wa.me/966565245159?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(url, "_blank");
-});
-</script>
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>احجز موعدك الآن</h3>
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="name">الاسم بالكامل</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">نوع الخدمة المطلوبة</label>
+                            <select id="service" required>
+                                <option value="">اختر الخدمة</option>
+                                <option value="جراحة العظام والكسور">جراحة العظام والكسور</option>
+                                <option value="إصابات الملاعب">إصابات الملاعب</option>
+                                <option value="جراحة المفاصل">جراحة المفاصل</option>
+                                <option value="جراحة المناظير">جراحة المناظير</option>
+                                <option value="استشارة طبية">استشارة طبية</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">إرسال الحجز</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1584,6 +1569,7 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
                 <a href="#home">الرئيسية</a>
                 <a href="#about">عن الدكتور</a>
                 <a href="#services">الخدمات</a>
+                <a href="#blog">المقالات</a>
                 <a href="#reviews">التقييمات</a>
                 <a href="#contact">التواصل</a>
             </div>
@@ -1599,7 +1585,25 @@ document.getElementById("appointmentForm").addEventListener("submit", function(e
         // Form submission handling
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('شكراً لتواصلكم، سيتم الرد عليكم في أقرب وقت ممكن.');
+            
+            // التحقق من صحة البيانات
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+            let service = document.getElementById("service").value;
+            
+            if (!name || !phone || !service) {
+                alert("يرجى ملء جميع الحقول المطلوبة");
+                return;
+            }
+            
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            let whatsappMessage = `حجز موعد مع د. خالد يوسف%0A%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالبريد: ${email}%0Aالخدمة: ${service}%0Aالرسالة: ${message}`;
+
+            window.open(`https://wa.me/966565245159?text=${whatsappMessage}`, "_blank");
+            
+            alert("شكراً لك، تم إرسال طلبك بنجاح. سيتم التواصل معك قريباً.");
             this.reset();
         });
         
