@@ -153,6 +153,17 @@
             background: var(--secondary-color);
         }
         
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
         .options {
             display: flex;
             flex-wrap: wrap;
@@ -215,6 +226,7 @@
             padding: 20px;
             border-radius: 10px;
             min-width: 180px;
+            text-align: center;
         }
         
         .badge i {
@@ -264,6 +276,30 @@
             text-align: center;
         }
         
+        .note-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        
+        .instructions {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .instructions ol {
+            padding-right: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
         @media (max-width: 768px) {
             .options {
                 flex-direction: column;
@@ -303,6 +339,10 @@
             <h2>شاركنا تجربتك</h2>
             <p>نسعى دائماً لتقديم أفضل رعاية طبية، ونقدر ملاحظاتكم التي تساعدنا على التحسين المستمر وتقديم خدمة أفضل</p>
             
+            <div class="note-box">
+                <i class="fas fa-info-circle"></i> نرحب بتقييمك من خلال المنصات الموثوقة مثل Google Maps حيث يمكن للآخرين الاستفادة من تجربتك.
+            </div>
+            
             <div class="rating-system">
                 <h3>ما تقييمك للخدمة المقدمة؟</h3>
                 <div class="stars">
@@ -328,7 +368,7 @@
                 <button id="submit-rating">إرسال التقييم</button>
                 
                 <div class="success-message" id="success-message">
-                    شكراً لك على تقييمك! نقدّر ملاحظاتك وسنسعى لتحسين خدماتنا باستمرار.
+                    <i class="fas fa-check-circle"></i> شكراً لك على تقييمك! نقدّر ملاحظاتك وسنسعى لتحسين خدماتنا باستمرار.
                 </div>
             </div>
         </div>
@@ -337,29 +377,52 @@
             <h3>مركز الثمال الطبي لجراحات اليوم الواحد</h3>
             <p>خميس مشيط، المملكة العربية السعودية</p>
             <a href="https://maps.app.goo.gl/cUcHXkzpFsgoCFDAA?g_st=ipc" target="_blank">
-                <button>الموقع على خرائط جوجل</button>
+                <button><i class="fas fa-map-marker-alt"></i> الموقع على خرائط جوجل</button>
             </a>
         </div>
 
         <div class="card">
-            <h2>شارك تجربتك على منصات التقييم</h2>
-            <p>يمكنك أيضاً مشاركة تجربتك على منصات التقييم الشهيرة لمساعدة الآخرين في اختيار الرعاية الصحية المناسبة:</p>
+            <h2>طريقتان سهلة لإضافة تقييمك على Google Maps</h2>
+            
+            <div class="instructions">
+                <h3>الطريقة الأولى: من خلال متصفح الإنترنت</h3>
+                <ol>
+                    <li>افتح <a href="https://www.google.com/maps" target="_blank">Google Maps</a></li>
+                    <li>ابحث عن "مركز الثمال الطبي" أو "د. خالد حسن السعيد"</li>
+                    <li>انقر على المركز في النتائج</li>
+                    <li>انزل لأسفل حتى ترى قسم التقييمات</li>
+                    <li>انقر على "كتابة رأي"</li>
+                    <li>أضف تقييمك وملاحظاتك</li>
+                </ol>
+                
+                <h3>الطريقة الثانية: من خلال تطبيق Google Maps على الهاتف</h3>
+                <ol>
+                    <li>افتح تطبيق Google Maps على هاتفك</li>
+                    <li>ابحث عن "مركز الثمال الطبي"</li>
+                    <li>انقر على المركز في النتائج</li>
+                    <li>انزل لأسفل حتى ترى قسم التقييمات</li>
+                    <li>انقر على "كتابة رأي"</li>
+                    <li>أضف تقييمك وملاحظاتك</li>
+                </ol>
+            </div>
             
             <div class="rating-badges">
                 <div class="badge">
                     <i class="fab fa-google"></i>
-                    <h3>Google Maps</h3>
-                    <p>قيم مركز الثمال الطبي</p>
-                    <a href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID" target="_blank">
-                        <button>أضف تقييمك</button>
+                    <h3>التقييم على Google Maps</h3>
+                    <p>ساعد الآخرين بمعرفة تجربتك</p>
+                    <a href="https://search.google.com/local/writereview?placeid=ChIJD7xxSbVrlz4RwcFDTloL1s0" target="_blank">
+                        <button><i class="fas fa-star"></i> أضف تقييمك</button>
                     </a>
                 </div>
                 
                 <div class="badge">
-                    <i class="fas fa-star"></i>
-                    <h3>منصات طبية</h3>
-                    <p>قيم الخدمة الطبية</p>
-                    <button onclick="alert('يمكنك البحث عن د. خالد حسن السعيد على منصات التقييم الطبية المتخصصة')">المزيد من المعلومات</button>
+                    <i class="fas fa-envelope"></i>
+                    <h3>إرسال ملاحظات مباشرة</h3>
+                    <p>شاركنا بتقييمك عبر البريد</p>
+                    <a href="mailto:example@example.com?subject=تقييم الخدمة الطبية">
+                        <button class="btn-outline"><i class="fas fa-paper-plane"></i> إرسال بريد</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -402,11 +465,17 @@
                     return;
                 }
                 
+                const selectedOptions = Array.from(document.querySelectorAll('.option-btn.selected'))
+                    .map(btn => btn.textContent)
+                    .join(', ');
+                
+                const feedback = document.querySelector('textarea').value;
+                
+                // هنا يمكنك إضافة كود لإرسال البيانات
+                // يمكنك استخدام خدمات مجانية مثل FormSubmit أو EmailJS
+                
                 const successMessage = document.getElementById('success-message');
                 successMessage.style.display = 'block';
-                
-                // هنا يمكنك إضافة كود لإرسال البيانات لخادمك
-                // يمكنك استخدام خدمات مثل Formspree أو EmailJS لإرسال التقييمات إلى بريدك الإلكتروني
                 
                 // إعادة تعيين النموذج
                 stars.forEach(s => s.classList.remove('active'));
@@ -416,6 +485,11 @@
                 
                 // تمرير إلى الأعلى لرؤية رسالة النجاح
                 successMessage.scrollIntoView({ behavior: 'smooth' });
+                
+                // فتح نافذة جديدة للتقييم على Google Maps بعد ثوانٍ
+                setTimeout(function() {
+                    window.open('https://search.google.com/local/writereview?placeid=ChIJD7xxSbVrlz4RwcFDTloL1s0', '_blank');
+                }, 2000);
             });
         });
     </script>
