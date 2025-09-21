@@ -1,47 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التمارين العلاجية - دكتور العظام</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* تنسيقات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* تنسيقات قسم الفيديوهات */
+        .videos {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            color: #1a73e8;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 18px;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .play-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .play-button i {
+            color: #1a73e8;
+            font-size: 20px;
+            margin-left: 4px;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-info h3 {
+            color: #1a73e8;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .video-info p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .video-link {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+        
+        .video-link:hover {
+            color: #0d47a1;
+        }
+        
+        /* تنسيقات خاصة ببطاقة التمارين العلاجية */
+        .exercise-card {
+            position: relative;
+            border: 2px solid #1a73e8;
+        }
+        
+        .exercise-card .play-button {
+            background: rgba(26, 115, 232, 0.9);
+        }
+        
+        .exercise-card .play-button:hover {
+            background: #1a73e8;
+            transform: scale(1.1);
+        }
+        
+        .exercise-card .play-button i {
+            color: white;
+            margin-left: 0;
+        }
+        
+        .exercise-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .exercise-overlay h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        
+        .exercise-overlay p {
+            margin: 0;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .exercise-link {
+            background: #1a73e8;
+            color: white !important;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .exercise-link:hover {
+            background: #0d47a1;
+            text-decoration: none;
+        }
+        
+        /* تنسيقات الصور المصغرة للفيديوهات */
+        .thumbnail-placeholder {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
 <!-- Videos Section -->
 <section id="videos" class="videos">
     <div class="container">
         <div class="section-title">
-            <h2>فيديوهات طبية</h2>
-            <p>مقاطع فيديو تعليمية وتوعوية حول صحة العظام والمفاصل</p>
+            <h2>التمارين العلاجية</h2>
+            <p>مجموعة تمارين متخصصة لمشاكل العظام والمفاصل المختلفة</p>
         </div>
         <div class="videos-grid">
+            <!-- تمارين القدم -->
             <div class="video-card">
                 <div class="video-thumbnail">
-                    <img src="https://i.postimg.cc/63wXwBYb/IMG-4468.jpg" alt="أنواع الحقن المفصلي">
-                    <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz')">
+                    <div class="thumbnail-placeholder">
+                        تمارين القدم والكاحل
+                    </div>
+                    <div class="play-button" onclick="openVideo('https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK')">
                         <i class="fas fa-play"></i>
                     </div>
                 </div>
                 <div class="video-info">
-                    <h3>أنواع الحقن المفصلي</h3>
-                    <p>متى نحتاج الحقن المفصلي؟</p>
-                    <a href="https://www.instagram.com/reel/DLSNPOsP_NA/?igsh=YmdyejhnbGp0cTAz" target="_blank" class="video-link">
-                        <i class="fab fa-instagram"></i> مشاهدة على انستجرام
+                    <h3>تمارين القدم</h3>
+                    <p>تمارين خاصة لتقوية القدم وتخفيف الآلام</p>
+                    <a href="https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
                     </a>
                 </div>
             </div>
             
+            <!-- تمارين آلام الرقبة -->
             <div class="video-card">
                 <div class="video-thumbnail">
-                    <img src="https://i.postimg.cc/fLKhR1Pz/IMG-4469.jpg" alt="آلام القدم المزمنة">
-                    <div class="play-button" onclick="openVideo('https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==')">
+                    <div class="thumbnail-placeholder">
+                        تمارين آلام الرقبة
+                    </div>
+                    <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
                         <i class="fas fa-play"></i>
                     </div>
                 </div>
                 <div class="video-info">
-                    <h3>آلام القدم المزمنة</h3>
-                    <p>أسباب الام القدم والشوكة العظمية</p>
-                    <a href="https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==" target="_blank" class="video-link">
-                        <i class="fab fa-instagram"></i> مشاهدة على انستجرام
+                    <h3>تمارين آلام الرقبة</h3>
+                    <p>تمارين لتخفيف آلام الرقبة وتقوية عضلاتها</p>
+                    <a href="https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
                     </a>
                 </div>
             </div>
             
-            <!-- بطاقة التمارين العلاجية الجديدة -->
+            <!-- تمارين آلام أسفل الظهر -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="thumbnail-placeholder">
+                        تمارين آلام أسفل الظهر
+                    </div>
+                    <div class="play-button" onclick="openVideo('https://youtu.be/P5FDFGmgfb8?si=7lEhwy285BCDbm3b')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>تمارين آلام أسفل الظهر</h3>
+                    <p>تمارين فعالة لتخفيف آلام أسفل الظهر</p>
+                    <a href="https://youtu.be/P5FDFGmgfb8?si=7lEhwy285BCDbm3b" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                    </a>
+                </div>
+            </div>
+            
+            <!-- تمارين تقوية عضلات الركبة -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="thumbnail-placeholder">
+                        تمارين تقوية عضلات الركبة
+                    </div>
+                    <div class="play-button" onclick="openVideo('https://youtu.be/e5w4zRLhYoQ?si=FqMcSxRMRB1sGOa')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>تمارين تقوية عضلات الركبة</h3>
+                    <p>تمارين لتقوية العضلات المحيطة بالركبة</p>
+                    <a href="https://youtu.be/e5w4zRLhYoQ?si=FqMcSxRMRB1sGOa" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                    </a>
+                </div>
+            </div>
+            
+            <!-- تمارين الركبة -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="thumbnail-placeholder">
+                        تمارين الركبة الشاملة
+                    </div>
+                    <div class="play-button" onclick="openVideo('https://youtu.be/e9XaimplVxQ?si=BN7w3CaS0XsRSh31')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>تمارين الركبة الشاملة</h3>
+                    <p>مجموعة تمارين متكاملة لصحة الركبة</p>
+                    <a href="https://youtu.be/e9XaimplVxQ?si=BN7w3CaS0XsRSh31" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                    </a>
+                </div>
+            </div>
+            
+            <!-- تمارين الرقبة -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="thumbnail-placeholder">
+                        تمارين الرقبة المتقدمة
+                    </div>
+                    <div class="play-button" onclick="openVideo('https://youtu.be/tUGgDc-_Iw0?si=tCLWIASg6B_a60JX')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>تمارين الرقبة المتقدمة</h3>
+                    <p>تمارين متقدمة لعلاج مشاكل الرقبة</p>
+                    <a href="https://youtu.be/tUGgDc-_Iw0?si=tCLWIASg6B_a60JX" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                    </a>
+                </div>
+            </div>
+            
+            <!-- تمارين الكاحل -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="thumbnail-placeholder">
+                        تمارين الكاحل
+                    </div>
+                    <div class="play-button" onclick="openVideo('https://youtu.be/YaLNrNRpgRs?si=fhgj0K1DzniBYlN7')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h3>تمارين الكاحل</h3>
+                    <p>تمارين لتقوية الكاحل وعلاج الإصابات</p>
+                    <a href="https://youtu.be/YaLNrNRpgRs?si=fhgj0K1DzniBYlN7" target="_blank" class="video-link">
+                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                    </a>
+                </div>
+            </div>
+            
+            <!-- بطاقة التمارين العلاجية الشاملة -->
             <div class="video-card exercise-card">
                 <div class="video-thumbnail">
-                    <img src="https://i.postimg.cc/fLKhR1Pz/IMG-4469.jpg" alt="تمارين العظام">
+                    <div class="thumbnail-placeholder">
+                        التمارين العلاجية الشاملة
+                    </div>
                     <div class="play-button" onclick="location.href='exercises.html'">
                         <i class="fas fa-dumbbell"></i>
                     </div>
@@ -51,10 +367,10 @@
                     </div>
                 </div>
                 <div class="video-info">
-                    <h3>التمارين العلاجية</h3>
+                    <h3>التمارين العلاجية الشاملة</h3>
                     <p>مجموعة تمارين متخصصة لمشاكل العظام المختلفة</p>
                     <a href="exercises.html" class="video-link exercise-link">
-                        <i class="fas fa-dumbbell"></i> استكشاف التمارين العلاجية
+                        <i class="fas fa-dumbbell"></i> استكشاف جميع التمارين
                     </a>
                 </div>
             </div>
@@ -62,179 +378,12 @@
     </div>
 </section>
 
-<style>
-    /* تنسيقات خاصة ببطاقة التمارين العلاجية */
-    .exercise-card {
-        position: relative;
-        border: 2px solid #1a73e8;
-    }
-    
-    .exercise-card .play-button {
-        background: rgba(26, 115, 232, 0.9);
-    }
-    
-    .exercise-card .play-button:hover {
-        background: #1a73e8;
-        transform: scale(1.1);
-    }
-    
-    .exercise-card .play-button i {
-        color: white;
-        margin-left: 0;
-    }
-    
-    .exercise-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-        color: white;
-        padding: 15px;
-        text-align: center;
-    }
-    
-    .exercise-overlay h4 {
-        margin: 0 0 5px 0;
-        font-size: 16px;
-    }
-    
-    .exercise-overlay p {
-        margin: 0;
-        font-size: 12px;
-        opacity: 0.9;
-    }
-    
-    .exercise-link {
-        background: #1a73e8;
-        color: white !important;
-        padding: 8px 15px;
-        border-radius: 4px;
-        display: inline-block;
-        margin-top: 10px;
-        transition: background 0.3s;
-    }
-    
-    .exercise-link:hover {
-        background: #0d47a1;
-        text-decoration: none;
-    }
-    
-    /* تنسيقات عامة للفيديوهات (في حال لم تكن موجودة مسبقاً) */
-    .videos {
-        padding: 60px 0;
-        background: #f8f9fa;
-    }
-    
-    .section-title {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    .section-title h2 {
-        color: #1a73e8;
-        font-size: 32px;
-        margin-bottom: 15px;
-    }
-    
-    .section-title p {
-        color: #666;
-        font-size: 18px;
-    }
-    
-    .videos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-    }
-    
-    .video-card {
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .video-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-    
-    .video-thumbnail {
-        position: relative;
-        height: 200px;
-        overflow: hidden;
-    }
-    
-    .video-thumbnail img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    
-    .play-button:hover {
-        background: rgba(255, 255, 255, 1);
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-    
-    .play-button i {
-        color: #1a73e8;
-        font-size: 20px;
-        margin-left: 4px;
-    }
-    
-    .video-info {
-        padding: 20px;
-    }
-    
-    .video-info h3 {
-        color: #1a73e8;
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 20px;
-    }
-    
-    .video-info p {
-        color: #666;
-        margin-bottom: 15px;
-        line-height: 1.5;
-    }
-    
-    .video-link {
-        color: #1a73e8;
-        text-decoration: none;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        transition: color 0.3s;
-    }
-    
-    .video-link:hover {
-        color: #0d47a1;
-    }
-</style>
-
 <script>
-    // دالة فتح الفيديو في حالة استخدامها
+    // دالة فتح الفيديو
     function openVideo(url) {
         window.open(url, '_blank');
     }
 </script>
+
+</body>
+</html>
