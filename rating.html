@@ -190,26 +190,6 @@
             color: white;
         }
         
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .testimonial {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .testimonial .stars {
-            font-size: 1.2em;
-            margin: 10px 0;
-            color: var(--accent-color);
-        }
-        
         .rating-badges {
             display: flex;
             justify-content: center;
@@ -237,11 +217,6 @@
         
         .badge p {
             margin: 5px 0;
-        }
-        
-        .badge button {
-            background: var(--primary-color);
-            margin-top: 10px;
         }
         
         .clinic-info {
@@ -300,30 +275,21 @@
             margin-bottom: 10px;
         }
         
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-        
         .google-review {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
             text-align: center;
+        }
+        
+        .formsubmit-steps {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            color: #0c5460;
         }
         
         @media (max-width: 768px) {
@@ -361,6 +327,17 @@
     </header>
 
     <div class="container">
+        <div class="formsubmit-steps">
+            <h3><i class="fas fa-info-circle"></i> إعداد FormSubmit</h3>
+            <ol>
+                <li>اذهب إلى <a href="https://formsubmit.co/" target="_blank">FormSubmit.co</a></li>
+                <li>أدخل بريدك الإلكتروني وانقر على "Start receiving forms now"</li>
+                <li>انسخ الرابط الذي تحصل عليه</li>
+                <li>استبدل الرابط في الكود (السطر 357) بالرابط الخاص بك</li>
+                <li>احفظ الملف وستصلك التقييمات على بريدك</li>
+            </ol>
+        </div>
+
         <div class="card">
             <h2>شاركنا تجربتك</h2>
             <p>نسعى دائماً لتقديم أفضل رعاية طبية، ونقدر ملاحظاتكم التي تساعدنا على التحسين المستمر وتقديم خدمة أفضل</p>
@@ -389,7 +366,7 @@
                 </div>
                 
                 <h3>ملاحظات إضافية (اختياري)</h3>
-                <textarea placeholder="شاركنا بتجربتك بشكل أكثر تفصيلاً..."></textarea>
+                <textarea placeholder="شاركنا بتجربتك بشكل أكثر تفصيلاً..." id="feedback"></textarea>
                 
                 <button id="submit-rating">إرسال التقييم</button>
                 
@@ -483,21 +460,27 @@
                     .map(btn => btn.textContent)
                     .join(', ');
                 
-                const feedback = document.querySelector('textarea').value;
+                const feedback = document.getElementById('feedback').value;
                 
                 // استخدام خدمة FormSubmit المجانية
+                // استبدل your-email@example.com بالبريد الإلكتروني الذي سجلته في FormSubmit
                 const formData = new FormData();
-                formData.append('rating', currentRating);
-                formData.append('options', selectedOptions);
-                formData.append('feedback', feedback);
+                formData.append('التقييم', currentRating + ' نجوم');
+                formData.append('الإيجابيات', selectedOptions);
+                formData.append('ملاحظات', feedback);
                 formData.append('_subject', 'تقييم جديد - د. خالد حسن السعيد');
+                formData.append('_template', 'table');
                 
-                // إرسال البيانات إلى FormSubmit
                 fetch('https://formsubmit.co/eb6d5d632ddd004b7267b69135cfadc5', {
                     method: 'POST',
                     body: formData
                 })
-                .then(response => response.json())
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Network response was not ok.');
+                })
                 .then(data => {
                     console.log('Success:', data);
                 })
@@ -511,7 +494,7 @@
                 // إعادة تعيين النموذج
                 stars.forEach(s => s.classList.remove('active'));
                 optionButtons.forEach(btn => btn.classList.remove('selected'));
-                document.querySelector('textarea').value = '';
+                document.getElementById('feedback').value = '';
                 currentRating = 0;
                 
                 // تمرير إلى الأعلى لرؤية رسالة النجاح
