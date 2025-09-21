@@ -300,6 +300,32 @@
             margin-bottom: 10px;
         }
         
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        
+        .google-review {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
         @media (max-width: 768px) {
             .options {
                 flex-direction: column;
@@ -373,6 +399,14 @@
             </div>
         </div>
 
+        <div class="google-review">
+            <h2><i class="fab fa-google"></i> ساعد الآخرين برؤية تجربتك على Google Maps</h2>
+            <p>تقييمك على Google Maps يساعد المرضى المستقبليين على اتخاذ قرارات أفضل</p>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJD7xxSbVrlz4RwcFDTloL1s0" target="_blank">
+                <button><i class="fas fa-star"></i> أضف تقييمك على Google Maps الآن</button>
+            </a>
+        </div>
+
         <div class="clinic-info">
             <h3>مركز الثمال الطبي لجراحات اليوم الواحد</h3>
             <p>خميس مشيط، المملكة العربية السعودية</p>
@@ -404,26 +438,6 @@
                     <li>انقر على "كتابة رأي"</li>
                     <li>أضف تقييمك وملاحظاتك</li>
                 </ol>
-            </div>
-            
-            <div class="rating-badges">
-                <div class="badge">
-                    <i class="fab fa-google"></i>
-                    <h3>التقييم على Google Maps</h3>
-                    <p>ساعد الآخرين بمعرفة تجربتك</p>
-                    <a href="https://search.google.com/local/writereview?placeid=ChIJD7xxSbVrlz4RwcFDTloL1s0" target="_blank">
-                        <button><i class="fas fa-star"></i> أضف تقييمك</button>
-                    </a>
-                </div>
-                
-                <div class="badge">
-                    <i class="fas fa-envelope"></i>
-                    <h3>إرسال ملاحظات مباشرة</h3>
-                    <p>شاركنا بتقييمك عبر البريد</p>
-                    <a href="mailto:example@example.com?subject=تقييم الخدمة الطبية">
-                        <button class="btn-outline"><i class="fas fa-paper-plane"></i> إرسال بريد</button>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -471,8 +485,25 @@
                 
                 const feedback = document.querySelector('textarea').value;
                 
-                // هنا يمكنك إضافة كود لإرسال البيانات
-                // يمكنك استخدام خدمات مجانية مثل FormSubmit أو EmailJS
+                // استخدام خدمة FormSubmit المجانية
+                const formData = new FormData();
+                formData.append('rating', currentRating);
+                formData.append('options', selectedOptions);
+                formData.append('feedback', feedback);
+                formData.append('_subject', 'تقييم جديد - د. خالد حسن السعيد');
+                
+                // إرسال البيانات إلى FormSubmit
+                fetch('https://formsubmit.co/khaliddaader29@gmail.com', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
                 
                 const successMessage = document.getElementById('success-message');
                 successMessage.style.display = 'block';
