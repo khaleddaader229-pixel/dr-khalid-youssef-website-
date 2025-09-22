@@ -54,10 +54,14 @@
             margin-bottom: 20px;
         }
         
-        .doctor-icon {
-            font-size: 80px;
-            color: #1a73e8;
-            margin-bottom: 15px;
+        .doctor-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #e0e0e0;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .doctor-name {
@@ -71,6 +75,7 @@
             font-size: 18px;
             color: #5f6368;
             margin-bottom: 15px;
+            line-height: 1.5;
         }
         
         .review-btn {
@@ -295,6 +300,7 @@
             border-top: 1px solid #e0e0e0;
             background: #f8f9fa;
             border-radius: 0 0 15px 15px;
+            margin-top: 20px;
         }
         
         @media (max-width: 768px) {
@@ -314,6 +320,11 @@
             .section-title h2 {
                 font-size: 26px;
             }
+            
+            .doctor-image {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -327,7 +338,7 @@
         <!-- قسم الدكتور -->
         <section class="doctor-section">
             <div class="doctor-profile">
-                <i class="fas fa-user-md doctor-icon"></i>
+                <img src="https://i.postimg.cc/YCrpr9xQ/IMG-3607.jpg" alt="الدكتور خالد حسن السعيد" class="doctor-image">
                 <h2 class="doctor-name">الدكتور خالد حسن السعيد</h2>
                 <p class="doctor-specialty">أخصائي أول جراحة العظام والكسور والمناظير والمفاصل والحقن المفصلي</p>
             </div>
