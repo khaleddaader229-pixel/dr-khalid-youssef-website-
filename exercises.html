@@ -27,7 +27,7 @@
             background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
             color: var(--text);
             line-height: 1.6;
-            padding-top: 80px;
+            min-height: 100vh;
         }
         
         .container {
@@ -42,10 +42,8 @@
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 1rem 0;
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 1000;
             box-shadow: var(--shadow);
         }
@@ -62,12 +60,12 @@
         }
         
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin: 0;
         }
         
         .logo span {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.9;
             display: block;
         }
@@ -101,23 +99,22 @@
         .doctor-section {
             background: white;
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 40px 30px;
+            margin: 30px 0;
             box-shadow: var(--shadow);
             text-align: center;
-            margin-top: 100px;
         }
         
         .doctor-profile {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         
         .doctor-image {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #e0e0e0;
@@ -137,16 +134,17 @@
             color: #5f6368;
             margin-bottom: 15px;
             line-height: 1.5;
+            max-width: 600px;
         }
         
         .review-btn {
             display: inline-block;
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 16px 40px;
+            padding: 14px 35px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             margin: 15px 0;
             transition: all 0.3s ease;
@@ -183,7 +181,7 @@
             padding: 40px 0;
             background: #f8f9fa;
             border-radius: 15px;
-            margin-bottom: 30px;
+            margin: 30px 0;
         }
         
         .section-title {
@@ -204,8 +202,8 @@
         
         .videos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
         }
         
         .video-card {
@@ -214,6 +212,9 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .video-card:hover {
@@ -234,35 +235,11 @@
             display: block;
         }
         
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .play-button:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        
-        .play-button i {
-            color: var(--primary);
-            font-size: 20px;
-            margin-left: 4px;
-        }
-        
         .video-info {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .video-info h3 {
@@ -276,6 +253,7 @@
             color: #666;
             margin-bottom: 15px;
             line-height: 1.5;
+            flex-grow: 1;
         }
         
         .video-link {
@@ -286,24 +264,30 @@
             align-items: center;
             gap: 5px;
             transition: color 0.3s;
+            padding: 8px 16px;
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            align-self: flex-start;
         }
         
         .video-link:hover {
-            color: var(--secondary);
+            background-color: var(--primary);
+            color: white;
         }
         
         /* تنسيقات تعليمات التقييم */
         .review-instructions {
             background: #f8f9fa;
             border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
+            padding: 25px;
+            margin: 25px 0;
             border-right: 4px solid var(--primary);
         }
         
         .review-instructions h3 {
             color: var(--primary);
             margin-bottom: 15px;
+            font-size: 22px;
         }
         
         .review-instructions ul {
@@ -312,8 +296,9 @@
         }
         
         .review-instructions li {
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #e0e0e0;
+            font-size: 16px;
         }
         
         .review-instructions li:last-child {
@@ -323,29 +308,54 @@
         /* تنسيقات الفوتر */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             color: #5f6368;
             font-size: 14px;
             border-top: 1px solid #e0e0e0;
             background: #f8f9fa;
-            border-radius: 0 0 15px 15px;
-            margin-top: 20px;
+            margin-top: 40px;
+        }
+        
+        footer p {
+            margin: 5px 0;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        /* تحسينات للكمبيوتر */
+        @media (min-width: 1200px) {
+            .videos-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .container {
+                max-width: 1400px;
+            }
+            
+            .doctor-section {
+                padding: 50px 40px;
+            }
         }
         
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
             }
             
             nav ul {
                 margin-top: 1rem;
                 justify-content: center;
                 flex-wrap: wrap;
+                gap: 10px;
             }
             
             nav ul li {
-                margin: 0.5rem;
+                margin: 0;
             }
             
             .doctor-name {
@@ -357,8 +367,8 @@
             }
             
             .review-btn {
-                padding: 14px 30px;
-                font-size: 18px;
+                padding: 12px 30px;
+                font-size: 16px;
             }
             
             .section-title h2 {
@@ -366,12 +376,38 @@
             }
             
             .doctor-image {
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
             }
             
             .videos-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .review-instructions {
+                padding: 20px;
+                margin: 20px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.1rem;
+            }
+            
+            .logo span {
+                font-size: 0.7rem;
+            }
+            
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 0.3rem;
+            }
+            
+            .doctor-section {
+                padding: 30px 20px;
+                margin: 20px 0;
             }
         }
     </style>
@@ -422,7 +458,7 @@
                 <i class="fas fa-star"></i> تقييم الدكتور على جوجل ماب
             </a>
             
-            <p>شارك الرابط مع المرضى عبر الواتساب:</p>
+            <p style="margin: 15px 0; font-size: 16px;">شارك الرابط مع المرضى عبر الواتساب:</p>
             <a href="https://wa.me/?text=يرجى%20الدخول%20لتقييم%20الدكتور%20خالد%20حسن%20السعيد%20أخصائي%20أول%20العظام%20والكسور%20والمفاصل%20والمناظير%20والحقن%20المفصلي%20https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/exercises.html" 
                class="whatsapp-btn" target="_blank" onclick="shareOnWhatsApp(); return false;">
                 <i class="fab fa-whatsapp"></i> مشاركة عبر الواتساب
@@ -440,9 +476,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/W1vDLrZG/IMG-4496.jpg" alt="تمارين القدم والكاحل">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين القدم</h3>
@@ -457,9 +490,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/vHj1PkYN/IMG-4500.jpg" alt="تمارين آلام الرقبة">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام الرقبة</h3>
@@ -474,9 +504,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/HxBnbPv3/IMG-4499.jpg" alt="تمارين آلام أسفل الظهر">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/P5FDFGmgfb8?si=7lEhwy285BCDbm3b')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام أسفل الظهر</h3>
@@ -491,9 +518,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/zGKfxfPy/IMG-4498.jpg" alt="تمارين تقوية عضلات الركبة">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/e5w4zRLhYoQ?si=FqMcSxRMRB1sGOa')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين تقوية عضلات الركبة</h3>
@@ -508,9 +532,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/zGKfxfPy/IMG-4498.jpg" alt="تمارين الركبة الشاملة">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/e9XaimplVxQ?si=BN7w3CaS0XsRSh31')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين الركبة الشاملة</h3>
@@ -525,9 +546,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/vHj1PkYN/IMG-4500.jpg" alt="تمارين الرقبة المتقدمة">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/tUGgDc-_Iw0?si=tCLWIASg6B_a60JX')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين الرقبة المتقدمة</h3>
@@ -542,9 +560,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/tJsqWRxC/IMG-4497.jpg" alt="تمارين الكاحل">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/YaLNrNRpgRs?si=fhgj0K1DzniBYlN7')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين الكاحل</h3>
@@ -559,9 +574,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/g2CZ051Z/IMG-4501.jpg" alt="تمارين آلام الكتف والتهاب الأوتار">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/Thizv43osIU?feature=shared')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام الكتف والتهاب الأوتار</h3>
@@ -576,9 +588,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/g2CZ051Z/IMG-4501.jpg" alt="تمارين آلام الكتف المتجمد">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/GN8CVtESZ-4?si=CGtdP-aab1h10aLF')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام الكتف المتجمد</h3>
@@ -593,9 +602,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/dQkNQ7fh/download-13.jpg" alt="تمارين آلام مرفق التنس">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/jlqYVkYRC_c?si=A5d59I0GZRjFfjIB')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام مرفق التنس</h3>
@@ -610,9 +616,6 @@
                 <div class="video-card">
                     <div class="video-thumbnail">
                         <img src="https://i.postimg.cc/dQkNQ7fh/download-13.jpg" alt="تمارين آلام مرفق الجولف">
-                        <div class="play-button" onclick="openVideo('https://youtu.be/gXNUkSuxB9E?si=h_NNo3zwvLKMmaZ2')">
-                            <i class="fas fa-play"></i>
-                        </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام الجولف للمرفق</h3>
@@ -632,11 +635,6 @@
     </footer>
 
     <script>
-        // دالة فتح الفيديو
-        function openVideo(url) {
-            window.open(url, '_blank');
-        }
-        
         // دالة مشاركة التقييم عبر الواتساب
         function shareOnWhatsApp() {
             const text = "يرجى الدخول لتقييم الدكتور خالد حسن السعيد أخصائي أول العظام والكسور والمفاصل والمناظير والحقن المفصلي";
