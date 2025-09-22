@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تقييم الدكتور خالد حسن السعيد - تمارين المفاصل</title>
+    <title>الدكتور خالد حسن السعيد - التمارين العلاجية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -27,7 +27,7 @@
             background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
             color: var(--text);
             line-height: 1.6;
-            padding-top: 80px; /* مساحة للشريط الثابت */
+            padding-top: 80px;
         }
         
         .container {
@@ -105,7 +105,7 @@
             margin-bottom: 30px;
             box-shadow: var(--shadow);
             text-align: center;
-            margin-top: 100px; /* زيادة المسافة من الأعلى */
+            margin-top: 100px;
         }
         
         .doctor-profile {
@@ -178,7 +178,7 @@
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
         }
         
-        /* تنسيقات قسم الفيديوهات */
+        /* تنسيقات قسم التمارين */
         .videos {
             padding: 40px 0;
             background: #f8f9fa;
@@ -227,16 +227,11 @@
             overflow: hidden;
         }
         
-        .thumbnail-placeholder {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        .video-thumbnail img {
+            width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            padding: 15px;
+            object-fit: cover;
+            display: block;
         }
         
         .play-button {
@@ -297,59 +292,32 @@
             color: var(--secondary);
         }
         
-        /* تنسيقات خاصة ببطاقة التمارين العلاجية */
-        .exercise-card {
-            position: relative;
-            border: 2px solid var(--primary);
+        /* تنسيقات تعليمات التقييم */
+        .review-instructions {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-right: 4px solid var(--primary);
         }
         
-        .exercise-card .play-button {
-            background: rgba(26, 115, 232, 0.9);
+        .review-instructions h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
         }
         
-        .exercise-card .play-button:hover {
-            background: var(--primary);
+        .review-instructions ul {
+            list-style-type: none;
+            padding: 0;
         }
         
-        .exercise-card .play-button i {
-            color: white;
+        .review-instructions li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
         }
         
-        .exercise-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        
-        .exercise-overlay h4 {
-            margin: 0 0 5px 0;
-            font-size: 16px;
-        }
-        
-        .exercise-overlay p {
-            margin: 0;
-            font-size: 12px;
-            opacity: 0.9;
-        }
-        
-        .exercise-link {
-            background: var(--primary);
-            color: white !important;
-            padding: 8px 15px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-        
-        .exercise-link:hover {
-            background: var(--secondary);
-            text-decoration: none;
+        .review-instructions li:last-child {
+            border-bottom: none;
         }
         
         /* تنسيقات الفوتر */
@@ -401,6 +369,10 @@
                 width: 150px;
                 height: 150px;
             }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -431,19 +403,21 @@
                 <p class="doctor-specialty">أخصائي أول جراحة العظام والكسور والمناظير والمفاصل والحقن المفصلي</p>
             </div>
         
-        <!-- الرابط الجديد مع الأسئلة التقييمية -->
-           <div class="review-instructions">
-    <h3>كيفية تقييم الدكتور:</h3>
-    <p>يرجى تقييم الدكتور بناءً على:</p>
-    <ul>
-        <li>دقة التشخيص</li>
-        <li>الشرح والوضوح</li>
-        <li>الاهتمام بالمريض</li>
-        <li>النتائج الطبية</li>
-        <li>التوصية للآخرين</li>
-    </ul>
-</div>
-             <a href="https://search.google.com/local/writereview?placeid=ChIJYSM6801X-xURVeiXGcGEHlg&source=g.page.m.nr._&laa=nmx-review-solicitation-recommendation-card&text=تقييم%20الدكتور%20خالد%20حسن%20السعيد:%20%0A%0A1-%20دقة%20التشخيص:%20%0A2-%20الشرح%20والوضوح:%20%0A3-%20الاهتمام%20بالمريض:%20%0A4-%20النتائج%20الطبية:%20%0A5-%20التوصية:%20%0A%0Aملاحظات%20إضافية:" 
+            <!-- تعليمات التقييم -->
+            <div class="review-instructions">
+                <h3>كيفية تقييم الدكتور:</h3>
+                <p>يرجى تقييم الدكتور بناءً على:</p>
+                <ul>
+                    <li>دقة التشخيص</li>
+                    <li>الشرح والوضوح</li>
+                    <li>الاهتمام بالمريض</li>
+                    <li>النتائج الطبية</li>
+                    <li>التوصية للآخرين</li>
+                </ul>
+            </div>
+            
+            <!-- رابط التقييم -->
+            <a href="https://search.google.com/local/writereview?placeid=ChIJYSM6801X-xURVeiXGcGEHlg" 
                class="review-btn" target="_blank">
                 <i class="fas fa-star"></i> تقييم الدكتور على جوجل ماب
             </a>
@@ -462,28 +436,27 @@
                 <p>مجموعة تمارين متخصصة لمشاكل العظام والمفاصل المختلفة</p>
             </div>
             <div class="videos-grid">
-                <!-- تمارين القدم --><div class="video-card">
-    <div class="video-thumbnail">
-        <img src="https://i.postimg.cc/W1vDLrZG/IMG-4496.jpg" alt="تمارين القدم والكاحل" style="width:100%; height:100%; object-fit:cover;">
-        <div class="play-button" onclick="openVideo('https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK')">
-            <i class="fas fa-play"></i>
-        </div>
-    </div>
-    <div class="video-info">
-        <h3>تمارين القدم</h3>
-        <p>تمارين خاصة لتقوية القدم وتخفيف الآلام</p>
-        <a href="https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK" target="_blank" class="video-link">
-            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-        </a>
-    </div>
-</div>
+                <!-- تمارين القدم -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="https://i.postimg.cc/W1vDLrZG/IMG-4496.jpg" alt="تمارين القدم والكاحل">
+                        <div class="play-button" onclick="openVideo('https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>تمارين القدم</h3>
+                        <p>تمارين خاصة لتقوية القدم وتخفيف الآلام</p>
+                        <a href="https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
+                    </div>
+                </div>
                 
                 <!-- تمارين آلام الرقبة -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/vHj1PkYN/IMG-4500.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين آلام الرقبة
-                        </div>
+                        <img src="https://i.postimg.cc/vHj1PkYN/IMG-4500.jpg" alt="تمارين آلام الرقبة">
                         <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
                             <i class="fas fa-play"></i>
                         </div>
@@ -500,9 +473,7 @@
                 <!-- تمارين آلام أسفل الظهر -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/HxBnbPv3/IMG-4499.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين آلام أسفل الظهر
-                        </div>
+                        <img src="https://i.postimg.cc/HxBnbPv3/IMG-4499.jpg" alt="تمارين آلام أسفل الظهر">
                         <div class="play-button" onclick="openVideo('https://youtu.be/P5FDFGmgfb8?si=7lEhwy285BCDbm3b')">
                             <i class="fas fa-play"></i>
                         </div>
@@ -519,9 +490,7 @@
                 <!-- تمارين تقوية عضلات الركبة -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/zGKfxfPy/IMG-4498.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين تقوية عضلات الركبة
-                        </div>
+                        <img src="https://i.postimg.cc/zGKfxfPy/IMG-4498.jpg" alt="تمارين تقوية عضلات الركبة">
                         <div class="play-button" onclick="openVideo('https://youtu.be/e5w4zRLhYoQ?si=FqMcSxRMRB1sGOa')">
                             <i class="fas fa-play"></i>
                         </div>
@@ -535,12 +504,10 @@
                     </div>
                 </div>
                 
-                <!-- تمارين الركبة -->
+                <!-- تمارين الركبة الشاملة -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/zGKfxfPy/IMG-4498.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين الركبة الشاملة
-                        </div>
+                        <img src="https://i.postimg.cc/zGKfxfPy/IMG-4498.jpg" alt="تمارين الركبة الشاملة">
                         <div class="play-button" onclick="openVideo('https://youtu.be/e9XaimplVxQ?si=BN7w3CaS0XsRSh31')">
                             <i class="fas fa-play"></i>
                         </div>
@@ -554,12 +521,10 @@
                     </div>
                 </div>
                 
-                <!-- تمارين الرقبة -->
+                <!-- تمارين الرقبة المتقدمة -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/vHj1PkYN/IMG-4500.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين الرقبة المتقدمة
-                        </div>
+                        <img src="https://i.postimg.cc/vHj1PkYN/IMG-4500.jpg" alt="تمارين الرقبة المتقدمة">
                         <div class="play-button" onclick="openVideo('https://youtu.be/tUGgDc-_Iw0?si=tCLWIASg6B_a60JX')">
                             <i class="fas fa-play"></i>
                         </div>
@@ -576,9 +541,7 @@
                 <!-- تمارين الكاحل -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/tJsqWRxC/IMG-4497.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين الكاحل
-                        </div>
+                        <img src="https://i.postimg.cc/tJsqWRxC/IMG-4497.jpg" alt="تمارين الكاحل">
                         <div class="play-button" onclick="openVideo('https://youtu.be/YaLNrNRpgRs?si=fhgj0K1DzniBYlN7')">
                             <i class="fas fa-play"></i>
                         </div>
@@ -591,79 +554,74 @@
                         </a>
                     </div>
                 </div>
-         <--تمارين الكتف-->       
                 
+                <!-- تمارين آلام الكتف والتهاب الأوتار -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/g2CZ051Z/IMG-4501.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين آلام الكتف والتهاب أوتار الكتف
-                        </div>
-                        <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
+                        <img src="https://i.postimg.cc/g2CZ051Z/IMG-4501.jpg" alt="تمارين آلام الكتف والتهاب الأوتار">
+                        <div class="play-button" onclick="openVideo('https://youtu.be/Thizv43osIU?feature=shared')">
                             <i class="fas fa-play"></i>
                         </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام الكتف والتهاب الأوتار</h3>
-                        <p>تمارين لتخفيف آلام الكتف والتهاب الاوتار</p>
-                        <a href="https://youtu.be/Thizv43osIU?feature=sharedsi=rJr-tOiAoF3jdwbI" target="_blank" class="video-link">
+                        <p>تمارين لتخفيف آلام الكتف والتهاب الأوتار</p>
+                        <a href="https://youtu.be/Thizv43osIU?feature=shared" target="_blank" class="video-link">
                             <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
                         </a>
                     </div>
                 </div>
                 
+                <!-- تمارين آلام الكتف المتجمد -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/g2CZ051Z/IMG-4501.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين آلام الكتف المتجمد
-                        </div>
-                        <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
+                        <img src="https://i.postimg.cc/g2CZ051Z/IMG-4501.jpg" alt="تمارين آلام الكتف المتجمد">
+                        <div class="play-button" onclick="openVideo('https://youtu.be/GN8CVtESZ-4?si=CGtdP-aab1h10aLF')">
                             <i class="fas fa-play"></i>
                         </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام الكتف المتجمد</h3>
                         <p>تمارين لتخفيف آلام الكتف المتجمد</p>
-                        <a href="https://youtu.be/GN8CVtESZ-4?si=CGtdP-aab1h10aLFsi=rJr-tOiAoF3jdwbI" target="_blank" class="video-link">
-                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-                        </a>
-                    </div>
-                </div>
-         <--تمارين المرفق-->       
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/dQkNQ7fh/download-13.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين آلام مرفق التنس والام المرفق من الخارج 
-                        </div>
-                        <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>تمارين آلام مرفق التنس</h3>
-                        <p>تمارين لتخفيف آلام المرفق الخارجيه</p>
-                        <a href="https://youtu.be/jlqYVkYRC_c?si=A5d59I0GZRjFfjIBsi=rJr-tOiAoF3jdwbI" target="_blank" class="video-link">
+                        <a href="https://youtu.be/GN8CVtESZ-4?si=CGtdP-aab1h10aLF" target="_blank" class="video-link">
                             <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
                         </a>
                     </div>
                 </div>
                 
+                <!-- تمارين آلام مرفق التنس -->
                 <div class="video-card">
                     <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/dQkNQ7fh/download-13.jpg" alt="تمارين الآم الرقبه" style="width:100%; height:100%; object-fit:cover;">
-                            تمارين آلام مرفق الجولف والام المرفق الداخليه
+                        <img src="https://i.postimg.cc/dQkNQ7fh/download-13.jpg" alt="تمارين آلام مرفق التنس">
+                        <div class="play-button" onclick="openVideo('https://youtu.be/jlqYVkYRC_c?si=A5d59I0GZRjFfjIB')">
+                            <i class="fas fa-play"></i>
                         </div>
-                        <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
+                    </div>
+                    <div class="video-info">
+                        <h3>تمارين آلام مرفق التنس</h3>
+                        <p>تمارين لتخفيف آلام المرفق الخارجية</p>
+                        <a href="https://youtu.be/jlqYVkYRC_c?si=A5d59I0GZRjFfjIB" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- تمارين آلام مرفق الجولف -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="https://i.postimg.cc/dQkNQ7fh/download-13.jpg" alt="تمارين آلام مرفق الجولف">
+                        <div class="play-button" onclick="openVideo('https://youtu.be/gXNUkSuxB9E?si=h_NNo3zwvLKMmaZ2')">
                             <i class="fas fa-play"></i>
                         </div>
                     </div>
                     <div class="video-info">
                         <h3>تمارين آلام الجولف للمرفق</h3>
-                        <p>تمارين لتخفيف آلام المرفق الداخليه</p>
-                        <a href="https://youtu.be/gXNUkSuxB9E?si=h_NNo3zwvLKMmaZ2si=rJr-tOiAoF3jdwbI" target="_blank" class="video-link">
+                        <p>تمارين لتخفيف آلام المرفق الداخلية</p>
+                        <a href="https://youtu.be/gXNUkSuxB9E?si=h_NNo3zwvLKMmaZ2" target="_blank" class="video-link">
                             <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
                         </a>
                     </div>
-                </div> 
+                </div>
             </div>
         </section>
     </div>
