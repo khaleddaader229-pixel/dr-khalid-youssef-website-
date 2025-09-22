@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التمارين العلاجية - دكتور العظام</title>
+    <title>تقييم الدكتور خالد حسن السعيد - تمارين المفاصل</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* تنسيقات عامة */
         * {
             margin: 0;
             padding: 0;
@@ -15,7 +14,7 @@
         }
         
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
             color: #333;
             line-height: 1.6;
         }
@@ -27,10 +26,98 @@
             padding: 0 15px;
         }
         
+        /* تنسيقات الهيدر */
+        header {
+            background: linear-gradient(90deg, #1a73e8 0%, #4285f4 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* تنسيقات قسم الدكتور */
+        .doctor-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .doctor-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .doctor-icon {
+            font-size: 80px;
+            color: #1a73e8;
+            margin-bottom: 15px;
+        }
+        
+        .doctor-name {
+            font-size: 28px;
+            color: #1a73e8;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .doctor-specialty {
+            font-size: 18px;
+            color: #5f6368;
+            margin-bottom: 15px;
+        }
+        
+        .review-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #1a73e8 0%, #4285f4 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+        }
+        
+        .review-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(66, 133, 244, 0.6);
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        }
+        
         /* تنسيقات قسم الفيديوهات */
         .videos {
-            padding: 60px 0;
+            padding: 40px 0;
             background: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 30px;
         }
         
         .section-title {
@@ -74,10 +161,16 @@
             overflow: hidden;
         }
         
-        .video-thumbnail img {
-            width: 100%;
+        .thumbnail-placeholder {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
             height: 100%;
-            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
         }
         
         .play-button {
@@ -150,12 +243,10 @@
         
         .exercise-card .play-button:hover {
             background: #1a73e8;
-            transform: scale(1.1);
         }
         
         .exercise-card .play-button i {
             color: white;
-            margin-left: 0;
         }
         
         .exercise-overlay {
@@ -195,195 +286,246 @@
             text-decoration: none;
         }
         
-        /* تنسيقات الصور المصغرة للفيديوهات */
-        .thumbnail-placeholder {
-            background: linear-gradient(135deg, #1a73e8, #0d47a1);
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
+        /* تنسيقات الفوتر */
+        footer {
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+            color: #5f6368;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+            background: #f8f9fa;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .doctor-name {
+                font-size: 24px;
+            }
+            
+            .doctor-specialty {
+                font-size: 16px;
+            }
+            
+            .review-btn {
+                padding: 14px 30px;
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>مركز الثمال الطبي</h1>
+        <p>نقدم لكم أفضل خدمات الرعاية الصحية</p>
+    </header>
 
-<!-- Videos Section -->
-<section id="videos" class="videos">
     <div class="container">
-        <div class="section-title">
-            <h2>التمارين العلاجية</h2>
-            <p>مجموعة تمارين متخصصة لمشاكل العظام والمفاصل المختلفة</p>
-        </div>
-        <div class="videos-grid">
-            <!-- تمارين القدم -->
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="thumbnail-placeholder">
-                        تمارين القدم والكاحل
-                    </div>
-                    <div class="play-button" onclick="openVideo('https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK')">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>تمارين القدم</h3>
-                    <p>تمارين خاصة لتقوية القدم وتخفيف الآلام</p>
-                    <a href="https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK" target="_blank" class="video-link">
-                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-                    </a>
-                </div>
+        <!-- قسم الدكتور -->
+        <section class="doctor-section">
+            <div class="doctor-profile">
+                <i class="fas fa-user-md doctor-icon"></i>
+                <h2 class="doctor-name">الدكتور خالد حسن السعيد</h2>
+                <p class="doctor-specialty">أخصائي أول جراحة العظام والكسور والمناظير والمفاصل والحقن المفصلي</p>
             </div>
             
-            <!-- تمارين آلام الرقبة -->
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="thumbnail-placeholder">
-                        تمارين آلام الرقبة
-                    </div>
-                    <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>تمارين آلام الرقبة</h3>
-                    <p>تمارين لتخفيف آلام الرقبة وتقوية عضلاتها</p>
-                    <a href="https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI" target="_blank" class="video-link">
-                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-                    </a>
-                </div>
-            </div>
+            <a href="https://search.google.com/local/writereview?placeid=ChIJYSM6801X-xURVeiXGcGEHlg&source=g.page.m.nr._&laa=nmx-review-solicitation-recommendation-card" class="review-btn">
+                <i class="fas fa-star"></i> تقييم الدكتور على جوجل
+            </a>
             
-            <!-- تمارين آلام أسفل الظهر -->
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="thumbnail-placeholder">
-                        تمارين آلام أسفل الظهر
+            <p>شارك الرابط مع المرضى عبر الواتساب:</p>
+            <a href="https://wa.me/?text=يرجى%20الدخول%20لتقييم%20الدكتور%20خالد%20حسن%20السعيد%20أخصائي%20أول%20العظام%20والكسور%20والمفاصل%20والمناظير%20والحقن%20المفصلي%20https://search.google.com/local/writereview?placeid=ChIJYSM6801X-xURVeiXGcGEHlg" 
+               class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> مشاركة عبر الواتساب
+            </a>
+        </section>
+
+        <!-- قسم التمارين العلاجية -->
+        <section class="videos">
+            <div class="section-title">
+                <h2>التمارين العلاجية</h2>
+                <p>مجموعة تمارين متخصصة لمشاكل العظام والمفاصل المختلفة</p>
+            </div>
+            <div class="videos-grid">
+                <!-- تمارين القدم -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            تمارين القدم والكاحل
+                        </div>
+                        <div class="play-button" onclick="openVideo('https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK')">
+                            <i class="fas fa-play"></i>
+                        </div>
                     </div>
-                    <div class="play-button" onclick="openVideo('https://youtu.be/P5FDFGmgfb8?si=7lEhwy285BCDbm3b')">
-                        <i class="fas fa-play"></i>
+                    <div class="video-info">
+                        <h3>تمارين القدم</h3>
+                        <p>تمارين خاصة لتقوية القدم وتخفيف الآلام</p>
+                        <a href="https://youtu.be/B1_6mIjgm_s?si=3c06VnNPPjM0w1EK" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
                     </div>
                 </div>
-                <div class="video-info">
-                    <h3>تمارين آلام أسفل الظهر</h3>
-                    <p>تمارين فعالة لتخفيف آلام أسفل الظهر</p>
-                    <a href="https://youtu.be/P5FDFGmgfb8?si=7lEhwy285BCDbm3b" target="_blank" class="video-link">
-                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-                    </a>
+                
+                <!-- تمارين آلام الرقبة -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            تمارين آلام الرقبة
+                        </div>
+                        <div class="play-button" onclick="openVideo('https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>تمارين آلام الرقبة</h3>
+                        <p>تمارين لتخفيف آلام الرقبة وتقوية عضلاتها</p>
+                        <a href="https://youtu.be/XRSu47CeF3Y?si=rJr-tOiAoF3jdwbI" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- تمارين آلام أسفل الظهر -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            تمارين آلام أسفل الظهر
+                        </div>
+                        <div class="play-button" onclick="openVideo('https://youtu.be/P5FDFGmgfb8?si=7lEhwy285BCDbm3b')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>تمارين آلام أسفل الظهر</h3>
+                        <p>تمارين فعالة لتخفيف آلام أسفل الظهر</p>
+                        <a href="https://youtu.be/P5FDFGmgfb8?si=7lEhwy285BCDbm3b" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- تمارين تقوية عضلات الركبة -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            تمارين تقوية عضلات الركبة
+                        </div>
+                        <div class="play-button" onclick="openVideo('https://youtu.be/e5w4zRLhYoQ?si=FqMcSxRMRB1sGOa')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>تمارين تقوية عضلات الركبة</h3>
+                        <p>تمارين لتقوية العضلات المحيطة بالركبة</p>
+                        <a href="https://youtu.be/e5w4zRLhYoQ?si=FqMcSxRMRB1sGOa" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- تمارين الركبة -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            تمارين الركبة الشاملة
+                        </div>
+                        <div class="play-button" onclick="openVideo('https://youtu.be/e9XaimplVxQ?si=BN7w3CaS0XsRSh31')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>تمارين الركبة الشاملة</h3>
+                        <p>مجموعة تمارين متكاملة لصحة الركبة</p>
+                        <a href="https://youtu.be/e9XaimplVxQ?si=BN7w3CaS0XsRSh31" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- تمارين الرقبة -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            تمارين الرقبة المتقدمة
+                        </div>
+                        <div class="play-button" onclick="openVideo('https://youtu.be/tUGgDc-_Iw0?si=tCLWIASg6B_a60JX')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>تمارين الرقبة المتقدمة</h3>
+                        <p>تمارين متقدمة لعلاج مشاكل الرقبة</p>
+                        <a href="https://youtu.be/tUGgDc-_Iw0?si=tCLWIASg6B_a60JX" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- تمارين الكاحل -->
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            تمارين الكاحل
+                        </div>
+                        <div class="play-button" onclick="openVideo('https://youtu.be/YaLNrNRpgRs?si=fhgj0K1DzniBYlN7')">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>تمارين الكاحل</h3>
+                        <p>تمارين لتقوية الكاحل وعلاج الإصابات</p>
+                        <a href="https://youtu.be/YaLNrNRpgRs?si=fhgj0K1DzniBYlN7" target="_blank" class="video-link">
+                            <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- بطاقة التمارين العلاجية الشاملة -->
+                <div class="video-card exercise-card">
+                    <div class="video-thumbnail">
+                        <div class="thumbnail-placeholder">
+                            التمارين العلاجية الشاملة
+                        </div>
+                        <div class="play-button" onclick="openVideo('https://youtube.com/playlist?list=PLc3i6dTDRU1Qn9QnVnw9k3k5KqJ7Ld4Zz')">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="exercise-overlay">
+                            <h4>تمارين علاجية شاملة</h4>
+                            <p>للرقبة، الكتف، الظهر، الركبة، الكاحل والقدم</p>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>التمارين العلاجية الشاملة</h3>
+                        <p>مجموعة تمارين متخصصة لمشاكل العظام المختلفة</p>
+                        <a href="https://youtube.com/playlist?list=PLc3i6dTDRU1Qn9QnVnw9k3k5KqJ7Ld4Zz" target="_blank" class="video-link exercise-link">
+                            <i class="fas fa-dumbbell"></i> استكشاف جميع التمارين
+                        </a>
+                    </div>
                 </div>
             </div>
-            
-            <!-- تمارين تقوية عضلات الركبة -->
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="thumbnail-placeholder">
-                        تمارين تقوية عضلات الركبة
-                    </div>
-                    <div class="play-button" onclick="openVideo('https://youtu.be/e5w4zRLhYoQ?si=FqMcSxRMRB1sGOa')">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>تمارين تقوية عضلات الركبة</h3>
-                    <p>تمارين لتقوية العضلات المحيطة بالركبة</p>
-                    <a href="https://youtu.be/e5w4zRLhYoQ?si=FqMcSxRMRB1sGOa" target="_blank" class="video-link">
-                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-                    </a>
-                </div>
-            </div>
-            
-            <!-- تمارين الركبة -->
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="thumbnail-placeholder">
-                        تمارين الركبة الشاملة
-                    </div>
-                    <div class="play-button" onclick="openVideo('https://youtu.be/e9XaimplVxQ?si=BN7w3CaS0XsRSh31')">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>تمارين الركبة الشاملة</h3>
-                    <p>مجموعة تمارين متكاملة لصحة الركبة</p>
-                    <a href="https://youtu.be/e9XaimplVxQ?si=BN7w3CaS0XsRSh31" target="_blank" class="video-link">
-                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-                    </a>
-                </div>
-            </div>
-            
-            <!-- تمارين الرقبة -->
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="thumbnail-placeholder">
-                        تمارين الرقبة المتقدمة
-                    </div>
-                    <div class="play-button" onclick="openVideo('https://youtu.be/tUGgDc-_Iw0?si=tCLWIASg6B_a60JX')">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>تمارين الرقبة المتقدمة</h3>
-                    <p>تمارين متقدمة لعلاج مشاكل الرقبة</p>
-                    <a href="https://youtu.be/tUGgDc-_Iw0?si=tCLWIASg6B_a60JX" target="_blank" class="video-link">
-                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-                    </a>
-                </div>
-            </div>
-            
-            <!-- تمارين الكاحل -->
-            <div class="video-card">
-                <div class="video-thumbnail">
-                    <div class="thumbnail-placeholder">
-                        تمارين الكاحل
-                    </div>
-                    <div class="play-button" onclick="openVideo('https://youtu.be/YaLNrNRpgRs?si=fhgj0K1DzniBYlN7')">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>تمارين الكاحل</h3>
-                    <p>تمارين لتقوية الكاحل وعلاج الإصابات</p>
-                    <a href="https://youtu.be/YaLNrNRpgRs?si=fhgj0K1DzniBYlN7" target="_blank" class="video-link">
-                        <i class="fab fa-youtube"></i> مشاهدة على يوتيوب
-                    </a>
-                </div>
-            </div>
-            
-            <!-- بطاقة التمارين العلاجية الشاملة -->
-            <div class="video-card exercise-card">
-                <div class="video-thumbnail">
-                    <div class="thumbnail-placeholder">
-                        التمارين العلاجية الشاملة
-                    </div>
-                    <div class="play-button" onclick="location.href='exercises.html'">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <div class="exercise-overlay">
-                        <h4>تمارين علاجية شاملة</h4>
-                        <p>للرقبة، الكتف، الظهر، الركبة، الكاحل والقدم</p>
-                    </div>
-                </div>
-                <div class="video-info">
-                    <h3>التمارين العلاجية الشاملة</h3>
-                    <p>مجموعة تمارين متخصصة لمشاكل العظام المختلفة</p>
-                    <a href="exercises.html" class="video-link exercise-link">
-                        <i class="fas fa-dumbbell"></i> استكشاف جميع التمارين
-                    </a>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
-</section>
 
-<script>
-    // دالة فتح الفيديو
-    function openVideo(url) {
-        window.open(url, '_blank');
-    }
-</script>
+    <footer>
+        <p>© 2023 مركز الثمال الطبي - جميع الحقوق محفوظة</p>
+        <p>للاستفسار: <a href="tel:+966123456789">+966 12 345 6789</a></p>
+    </footer>
 
+    <script>
+        // دالة فتح الفيديو
+        function openVideo(url) {
+            window.open(url, '_blank');
+        }
+        
+        // دالة مشاركة التقييم عبر الواتساب
+        function shareOnWhatsApp() {
+            const text = "يرجى الدخول لتقييم الدكتور خالد حسن السعيد أخصائي أول العظام والكسور والمفاصل والمناظير والحقن المفصلي";
+            const url = "https://search.google.com/local/writereview?placeid=ChIJYSM6801X-xURVeiXGcGEHlg";
+            window.open(`https://wa.me/?text=${encodeURIComponent(text + " " + url)}`, '_blank');
+        }
+    </script>
 </body>
 </html>
