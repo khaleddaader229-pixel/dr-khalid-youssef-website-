@@ -8,8 +8,8 @@
     <meta name="google-site-verification" content="ZvcNnFXI4z_hsv5qDrcnuLznPRczpJW0CMh7syWsQhE" />
 
     <!-- وسوم Meta الأساسية -->
-    <meta name="description" content="د. خالد حسن السعيد يوسف - أفضل أخصائي جراحة العظام والمفاصل في خميس مشيط. علاج الكسور، إصابات الملاعب، جراحة المفاصل والمناظير. احجز موعدك الآن.">
-    <meta name="keywords" content="دكتور عظام, دكتور عظام في خميس مشيط, جراحة عظام, مفاصل, كسور, إصابات ملاعب, خميس مشيط, طبيب عظام, جراحة مفاصل, مناظير عظام, أفضل دكتور عظام في خميس مشيط, علاج آلام الظهر, استبدال مفصل الركبة, منظار الركبة">
+    <meta name="description" content="د. خالد حسن السعيد يوسف - أخصائي جراحة العظام والمفاصل في خميس مشيط. علاج الكسور، إصابات الملاعب، جراحة المفاصل والمناظير. احجز موعدك الآن.">
+    <meta name="keywords" content="دكتور عظام, دكتور عظام في خميس مشيط, جراحة عظام, مفاصل, كسور, إصابات ملاعب, خميس مشيط, طبيب عظام, جراحة مفاصل, مناظير عظام, دكتور عظام في خميس مشيط, علاج آلام الظهر, استبدال مفصل الركبة, منظار الركبة">
     <meta name="author" content="د. خالد حسن السعيد يوسف">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="googlebot" content="index, follow">
@@ -31,7 +31,7 @@
     <!-- تحسينات SEO -->
     <link rel="canonical" href="https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/">
 
-    <title>د. خالد حسن السعيد يوسف - أفضل دكتور عظام ومفاصل في خميس مشيط | علاج الكسور وإصابات الملاعب</title>
+    <title>د. خالد حسن السعيد يوسف - أخصائي أول جراحة العظام والمفاصل في خميس مشيط | علاج الكسور وإصابات الملاعب</title>
 
     <!-- إضافة Schema Markup للطبيب -->
     <script type="application/ld+json">
@@ -601,68 +601,58 @@
             margin-right: 8px;
         }
         
-        /* أنماط قسم المدونة */
-        .blog {
+        /* قسم التمارين العلاجية */
+        .exercises-section {
+            background-color: var(--light);
             padding: 5rem 0;
-            background-color: #f8f9fa;
         }
         
-        .blog-grid {
+        .exercises-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
-        .blog-card {
+        .exercise-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
         }
         
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        .exercise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
-        .blog-image {
+        .exercise-image {
             height: 200px;
             overflow: hidden;
         }
         
-        .blog-image img {
+        .exercise-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
         
-        .blog-card:hover .blog-image img {
+        .exercise-card:hover .exercise-image img {
             transform: scale(1.05);
         }
         
-        .blog-content {
+        .exercise-content {
             padding: 1.5rem;
         }
         
-        .blog-content h3 {
+        .exercise-content h3 {
             margin-bottom: 1rem;
             color: var(--dark);
         }
         
-        .blog-content h3 a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .blog-content h3 a:hover {
-            color: var(--primary);
-        }
-        
-        .blog-content p {
+        .exercise-content p {
             color: #666;
             margin-bottom: 1.5rem;
             line-height: 1.6;
@@ -1023,6 +1013,26 @@
             width: 100%;
         }
         
+        /* تحسينات إضافية */
+        .review-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+        }
+        
+        .review-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(66, 133, 244, 0.6);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .header-container {
@@ -1065,7 +1075,7 @@
                 padding: 10px 15px;
             }
             
-            .blog-grid {
+            .exercises-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1083,8 +1093,7 @@
                     <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
                     <li><a href="#about"><i class="fas fa-user-md"></i> عن الدكتور</a></li>
                     <li><a href="#services"><i class="fas fa-stethoscope"></i> الخدمات</a></li>
-                    <li><a href="#medical-info"><i class="fas fa-heartbeat"></i> معلومات طبية</a></li>
-                    <li><a href="#blog"><i class="fas fa-newspaper"></i> المقالات</a></li>
+                    <li><a href="#exercises"><i class="fas fa-dumbbell"></i> التمارين الرياضية</a></li>
                     <li><a href="#videos"><i class="fas fa-video"></i> فيديوهات</a></li>
                     <li><a href="#reviews"><i class="fas fa-star"></i> التقييمات</a></li>
                     <li><a href="#contact"><i class="fas fa-phone"></i> التواصل</a></li>
@@ -1106,7 +1115,7 @@
     <section id="home" class="hero">
         <div class="container hero-content">
             <div class="profile-img">
-                <img src="https://i.postimg.cc/YCrpr9xQ/IMG-3607.jpg" alt="د. خالد حسن السعيد يوسف - أفضل دكتور عظام ومفاصل في خميس مشيط" width="180" height="180" loading="eager">
+                <img src="https://i.postimg.cc/YCrpr9xQ/IMG-3607.jpg" alt="د. خالد حسن السعيد يوسف - أخصائي أول جراحة العظام والمفاصل في خميس مشيط" width="180" height="180" loading="eager">
             </div>
             <h1>د. خالد حسن السعيد يوسف - أخصائي جراحة العظام والمفاصل في خميس مشيط</h1>
             <h2>جراحة العظام والكسور وإصابات الملاعب والمفاصل - زميل كلية الجراحين المصرية</h2>
@@ -1126,7 +1135,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-title">
-                <h2>عن الدكتور | أفضل طبيب عظام في خميس مشيط</h2>
+                <h2>عن الدكتور</h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
@@ -1158,14 +1167,14 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-title">
-                <h2>الخدمات الطبية | عيادة العظام والمفاصل في مركز الثمال الطبي لجراحات اليوم الواحد خميس مشيط</h2>
+                <h2>الخدمات الطبية</h2>
             </div>
             <div class="services-grid">
                 <a href="bones-surgery.html" class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-bone"></i>
                     </div>
-                    <h3>جراحة العظام والكسور | علاج كسور العظام بأحدث التقنيات</h3>
+                    <h3>جراحة العظام والكسور</h3>
                     <p>علاج كسور العظام بمختلف أنواعها باستخدام أحدث التقنيات الجراحية والمنظار الجراحي.</p>
                     <span class="service-link">
                         <i class="fas fa-arrow-left"></i> اكتشف المزيد
@@ -1176,7 +1185,7 @@
                     <div class="service-icon">
                         <i class="fas fa-running"></i>
                     </div>
-                    <h3>إصابات الملاعب | علاج إصابات الرباط الصليبي والغضاريف</h3>
+                    <h3>إصابات الملاعب</h3>
                     <p>تشخيص وعلاج إصابات الملاعب المختلفة بما في ذلك إصابات الرباط الصليبي والغضاريف.</p>
                     <span class="service-link">
                         <i class="fas fa-arrow-left"></i> اكتشف المزيد
@@ -1187,7 +1196,7 @@
                     <div class="service-icon">
                         <i class="fas fa-wheelchair"></i>
                     </div>
-                    <h3>جراحة المفاصل | استبدال مفصل الركبة والورك في السعودية</h3>
+                    <h3>جراحة المفاصل</h3>
                     <p>جراحات استبدال المفاصل خاصة مفصل الركبة والورك باستخدام أحدث التقنيات العالمية.</p>
                     <span class="service-link">
                         <i class="fas fa-arrow-left"></i> اكتشف المزيد
@@ -1198,7 +1207,7 @@
                     <div class="service-icon">
                         <i class="fas fa-laptop-medical"></i>
                     </div>
-                    <h3>جراحة المناظير | منظار الركبة والكتف بأقل تدخل جراحي</h3>
+                    <h3>جراحة المناظير</h3>
                     <p>جراحات المناظير للكتف والركبة لإصابات الأربطة والغضاريف بأقل تدخل جراحي.</p>
                     <span class="service-link">
                         <i class="fas fa-arrow-left"></i> اكتشف المزيد
@@ -1208,47 +1217,26 @@
         </div>
     </section>
 
-    <!-- Medical Information Section -->
-    <section id="medical-info" class="medical-info">
+    <!-- Exercises Section -->
+    <section id="exercises" class="exercises-section">
         <div class="container">
-            <div class="medical-header">
-                <div class="section-title" style="margin-bottom: 0;">
-                    <h2>معلومات طبية عن أمراض العظام والمفاصل</h2>
-                </div>
-                <a href="medical-info.html" class="view-all">
-                    <i class="fas fa-book-medical"></i> جميع المقالات
-                </a>
+            <div class="section-title">
+                <h2>التمارين العلاجية</h2>
             </div>
-            <div class="info-cards">
-                <div class="info-card">
-                    <h3><i class="fas fa-bone"></i> هشاشة العظام | العلاج والوقاية في السعودية</h3>
-                    <p>هشاشة العظام هي حالة تضعف فيها العظام وتصبح هشة، مما يزيد من خطر الكسور. تعرف على الأعراض والأسباب وطرق الوقاية والعلاج.</p>
-                    <a href="medical-info.html#osteoporosis" class="read-more">
-                        <span>قراءة المزيد</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-                
-                <div class="info-card">
-                    <h3><i class="fas fa-wheelchair"></i> التهاب المفاصل | أحدث طرق العلاج في مركز الثمال الطبي لجراحات اليوم الواحد خميس مشيط</h3>
-                    <p>التهاب المفاصل هو تورم وآلام في المفاصل يمكن أن يؤثر على نطاق الحركة. اكتشف أنواعه المختلفة وطرق علاجه المتاحة.</p>
-                    <a href="medical-info.html#arthritis" class="read-more">
-                        <span>قراءة المزيد</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                </div>
-                
-                <div class="info-card">
-                    <h3><i class="fas fa-running"></i> إصابات الرباط الصليبي | العلاج والتأهيل الرياضي</h3>
-                    <p>إصابات الرباط الصليبي الأمامي شائعة بين الرياضيين. تعرف على كيفية حدوثها وأعراضها وطرق العلاج والوقاية منها.</p>
-                    <a href="medical-info.html#acl" class="read-more">
-                        <span>قراءة المزيد</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
+            <div class="exercises-grid">
+                <div class="exercise-card">
+                    <div class="exercise-image">
+                        <img src="https://i.postimg.cc/fLKhR1Pz/IMG-4469.jpg" alt="تمارين العظام">
+                    </div>
+                    <div class="exercise-content">
+                        <h3>التمارين العلاجية الشاملة</h3>
+                        <p>مجموعة تمارين متخصصة لمشاكل العظام المختلفة، تم تصميمها بعناية لتساعد في تخفيف الآلام وتحسين المرونة والقوة.</p>
+                        <a href="exercises.html" class="btn">
+                            <i class="fas fa-dumbbell"></i> استكشاف التمارين
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
         </div>
     </section>
 
@@ -1287,28 +1275,7 @@
                         <h3>آلام القدم المزمنة</h3>
                         <p>أسباب الام القدم والشوكة العظمية</p>
                         <a href="https://www.instagram.com/reel/DLpbuP7O0bM/?igsh=MTllemU3MmttYmQ4cg==" target="_blank" class="video-link">
-                            <i class="fab fa-instagram"></i> مشاهدة على انستجرam
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- بطاقة التمارين العلاجية الجديدة -->
-                <div class="video-card exercises-card">
-                    <div class="video-thumbnail">
-                        <img src="https://i.postimg.cc/fLKhR1Pz/IMG-4469.jpg" alt="تمارين العظام">
-                        <div class="play-button" onclick="location.href='exercises.html'">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <div class="exercises-overlay">
-                            <h4>تمارين علاجية شاملة</h4>
-                            <p>للرقبة، الكتف، الظهر، الركبة، الكاحل والقدم</p>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>التمارين العلاجية</h3>
-                        <p>مجموعة تمارين متخصصة لمشاكل العظام المختلفة</p>
-                        <a href="exercises.html" class="video-link exercises-link">
-                            <i class="fas fa-dumbbell"></i> استكشاف التمارين العلاجية
+                            <i class="fab fa-instagram"></i> مشاهدة على انستجرام
                         </a>
                     </div>
                 </div>
@@ -1320,21 +1287,19 @@
     <section id="reviews" class="reviews">
         <div class="container">
             <div class="section-title">
-                <h2>تقييمات المرضى | آراء العملاء عن الدكتور خالد حسن السعيد أخصائي أول جراحة العظام بمركز الثمال الطبي في خميس مشيط</h2>
+                <h2>تقييمات المرضى</h2>
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="review-header">
                         <div class="reviewer-img">
                             <i class="fab fa-google"></i>
-                             </div>
-                        <a href="rating.html">تقييم الدكتور خالد خسن السعيد أخصائي أول جراحات العظام والكسور والمناظير والمفاصل والحقن المفصلي </a>
-                    </div>
                         </div>
                         <div class="reviewer-info">
                             <div class="reviewer-name">مراجعة على جوجل</div>
                             <div class="review-date">تقييم 5 نجوم</div>
-                       
+                        </div>
+                    </div>
                     <div class="review-stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -1343,8 +1308,8 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <p>"دكتور خالد من أفضل دكاترة العظام، تعامل راقي ومهنية عالية في التشخيص والعلاج."</p>
-                    <a href="https://maps.app.goo.gl/PxmgC1PFZrSeMixQ8?g_st=ic" target="_blank" class="review-link">
-                        <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
+                    <a href="https://search.google.com/local/writereview?placeid=ChIJYSM6801X-xURVeiXGcGEHlg&source=g.page.m.nr._&laa=nmx-review-solicitation-recommendation-card" target="_blank" class="review-btn">
+                        <i class="fas fa-star"></i> تقييم الدكتور على جوجل
                     </a>
                 </div>
                 
@@ -1366,8 +1331,8 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <p>"الله يجزاه الجنة، دكتور متمكن ومتخصص وشرح وافي للحالة وطمني ."</p>
-                    <a href="https://maps.app.goo.gl/iceFKV2RJhBPDitB6?g_st=ic" target="_blank" class="review-link">
-                        <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
+                    <a href="https://search.google.com/local/writereview?placeid=ChIJYSM6801X-xURVeiXGcGEHlg&source=g.page.m.nr._&laa=nmx-review-solicitation-recommendation-card" target="_blank" class="review-btn">
+                        <i class="fas fa-star"></i> تقييم الدكتور على جوجل
                     </a>
                 </div>
                 
@@ -1388,63 +1353,11 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"دكتور خالد من أمهر الدكاترة في جراحة العظام، ."</p>
-                    <a href="https://maps.app.goo.gl/MDXbhKiBhu1HasUo7?g_st=ic" target="_blank" class="review-link">
-                        <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
+                    <p>"دكتور خالد من أمهر الدكاترة في جراحة العظام."</p>
+                    <a href="https://search.google.com/local/writereview?placeid=ChIJYSM6801X-xURVeiXGcGEHlg&source=g.page.m.nr._&laa=nmx-review-solicitation-recommendation-card" target="_blank" class="review-btn">
+                        <i class="fas fa-star"></i> تقييم الدكتور على جوجل
                     </a>
                 </div>
-                
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-img">
-                            <i class="fab fa-google"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <div class="reviewer-name">مراجعة على جوجل</div>
-                            <div class="review-date">تقييم 5 نجوم</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"يعطيك العافية دكتور، تشخيص دقيق وعلاج فعال، أنصح بالزيارة والاستفادة من خبرته."</p>
-                    <a href="https://maps.app.goo.gl/Pn8sSZG18hT4hoEVA?g_st=ic" target="_blank" class="review-link">
-                        <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
-                    </a>
-                </div>
-                
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="reviewer-img">
-                            <i class="fab fa-google"></i>
-                        </div>
-                        <div class="reviewer-info">
-                            <div class="reviewer-name">مراجعة على جوجل</div>
-                            <div class="review-date">تقييم 5 نجوم</div>
-                        </div>
-                    </div>
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p>"شكراً دكتور خالد على المتابعة والاهتمام، والحمدلله تحسنت حالتي كثيراً بفضل علاجك."</p>
-                    <a href="https://maps.app.goo.gl/A8Qj74sFGZ6jAfnd9?g_st=ic" target="_blank" class="review-link">
-                        <i class="fas fa-external-link-alt"></i> عرض التقييم على جوجل
-                    </a>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="https://maps.app.goo.gl/o3R2ju86u8GN8FWK6?g_st=ic" target="_blank" class="btn">
-                    <i class="fab fa-google"></i> عرض جميع التقييمات على جوجل
-                </a>
             </div>
         </div>
     </section>
@@ -1463,30 +1376,28 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
-                <h2>تواصل معنا | حجز موعد مع دكتور عظام في خميس مشيط</h2>
+                <h2>تواصل معنا</h2>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>معلومات التواصل</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> العنوان: خميس مشيط، المملكة العربية السعودية</p>
-                        <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:+966565245159">+966 56 524 5159</a></p>
-                        <p><i class="fas fa-envelope"></i> الإيميل: <a href="mailto:khaliddaader29@gmail.com">khaliddaader29@gmail.com</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> العنوان: <a href="https://maps.app.goo.gl/ixA4Npz4y7A8THZCA?g_st=ipc" target="_blank">خميس مشيط، المملكة العربية السعودية</a></p>
+                        <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:966565245159">966565245159</a></p>
+                        <p><i class="fas fa-envelope"></i> الإيميل: <a href="mailto:khaliddaader29@gmail.com?subject=استفسار عن موعد&body=أهلاً دكتور، أود حجز موعد للكشف">khaliddaader29@gmail.com</a></p>
                         <p><i class="fas fa-clock"></i> أوقات العمل: السبت إلى الخميس - 4 PM إلى 9 PM</p>
                     </div>
                     
-                    <h3>وسائل التواصل الاجتماعي</h3>
+                    <h3>وسائل التواصل</h3>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="tel:966565245159"><i class="fas fa-phone"></i></a>
                         <a href="https://wa.me/966565245159" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="contact-form">
-                    <h3>احجز موعدك الآن</h3>
+                    <h3>حجز موعد مع د خالد حسن السعيد أخصائي أول جراحة العظام مركز الثمال الطبي خميس مشيط</h3>
                     <form id="appointmentForm">
                         <div class="form-group">
                             <label for="name">الاسم بالكامل</label>
@@ -1529,7 +1440,7 @@
                 <a href="#home">الرئيسية</a>
                 <a href="#about">عن الدكتور</a>
                 <a href="#services">الخدمات</a>
-                <a href="#blog">المقالات</a>
+                <a href="#exercises">التمارين الرياضية</a>
                 <a href="#reviews">التقييمات</a>
                 <a href="#contact">التواصل</a>
             </div>
