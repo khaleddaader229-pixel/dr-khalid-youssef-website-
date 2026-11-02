@@ -1522,34 +1522,7 @@
 </section>
 
 
-<!-- ================= MEDICAL ARTICLES ================= -->
 
-<section id="medical-articles" style="background:#f5f9ff; padding:5rem 0;">
-    <div class="container">
-
-        <div class="section-title">
-            <h2>المقالات الطبية والتوعية الصحية</h2>
-            <p>معلومات طبية مبسطة عن أمراض العظام والمفاصل وطرق العلاج والوقاية.</p>
-        </div>
-
-        <div style="max-width:600px; margin:0 auto 30px;">
-            <input
-                type="search"
-                id="articleSearch"
-                placeholder="ابحث عن موضوع طبي..."
-                style="width:100%; padding:14px; border:1px solid #ddd; border-radius:8px; font-size:16px;"
-            >
-        </div>
-
-        <div id="medicalArticlesList"
-             style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;">
-            <p style="text-align:center;">جاري تحميل المقالات...</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= END MEDICAL ARTICLES ================= -->
 
 <!-- ================= WHY CHOOSE ================= -->
 
@@ -2849,85 +2822,6 @@
 
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", async function () {
-
-    const container = document.getElementById("medicalArticlesList");
-    const searchInput = document.getElementById("articleSearch");
-
-    if (!container || !searchInput) return;
-
-    let articles = [];
-
-    try {
-        const response = await fetch("./site-pages.json");
-
-        if (!response.ok) {
-            throw new Error("تعذر تحميل ملف المقالات");
-        }
-
-        articles = await response.json();
-
-        function displayArticles(search = "") {
-
-            container.innerHTML = "";
-
-            const filtered = articles.filter(article =>
-                (article.title || "").includes(search) ||
-                (article.description || "").includes(search) ||
-                (article.category || "").includes(search)
-            );
-
-            if (filtered.length === 0) {
-                container.textContent = "لا توجد مقالات مطابقة للبحث.";
-                return;
-            }
-
-            filtered.forEach(article => {
-
-                const card = document.createElement("article");
-
-                card.style.cssText =
-                    "background:white;padding:25px;border-radius:12px;" +
-                    "box-shadow:0 4px 10px rgba(0,0,0,.08);";
-
-                const category = document.createElement("p");
-                category.textContent = article.category || "مقالات طبية";
-                category.style.cssText = "color:#1a73e8;font-weight:bold;";
-
-                const title = document.createElement("h3");
-                title.textContent = article.title || "";
-                title.style.cssText = "color:#1a237e;margin:12px 0;";
-
-                const description = document.createElement("p");
-                description.textContent = article.description || "";
-
-                const link = document.createElement("a");
-                link.textContent = "اقرأ المقال ←";
-                link.href = article.url;
-                link.style.cssText =
-                    "display:inline-block;margin-top:15px;color:#1a73e8;" +
-                    "font-weight:bold;text-decoration:none;";
-
-                card.append(category, title, description, link);
-                container.appendChild(card);
-
-            });
-        }
-
-        displayArticles();
-
-        searchInput.addEventListener("input", function () {
-            displayArticles(this.value.trim());
-        });
-
-    } catch (error) {
-        container.textContent = "تعذر تحميل المقالات حاليًا.";
-        console.error(error);
-    }
-
-});
-</script>
 
 </body>
 </html>
