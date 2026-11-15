@@ -368,4 +368,51 @@
     }
   });
 
+  // ==========================================
+  // Google Analytics - Central WhatsApp Tracking
+  // ==========================================
+
+  if (typeof window.gtag !== "function") {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("js", new Date());
+    window.gtag("config", "G-S4C79XGDST");
+
+    const gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src =
+      "https://www.googletagmanager.com/gtag/js?id=G-S4C79XGDST";
+
+    document.head.appendChild(gaScript);
+  }
+
+  // Track WhatsApp booking links across the website
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest('a[href*="wa.me/"]');
+
+    if (!link) return;
+
+    const url = new URL(link.href);
+
+    // Ignore WhatsApp sharing links without a phone number
+    if (url.pathname !== "/966565245159" &&
+        url.pathname !== "/966565245159/") {
+      return;
+    }
+
+    // Avoid duplicating an existing booking event
+    const existingCode = link.getAttribute("onclick") || "";
+    if (existingCode.includes("whatsapp_booking_click")) return;
+
+    window.gtag("event", "whatsapp_booking_click", {
+      send_to: "G-S4C79XGDST",
+      event_category: "conversion",
+      event_label: window.location.pathname,
+      transport_type: "beacon"
+    });
+  }, true);
+
 })();
