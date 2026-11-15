@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
 
 Sitemap: https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/sitemap.xml
