@@ -1,0 +1,67 @@
+/* site.css - الأساس المشترك لكل صفحات الموقع */
+:root {
+  --brand: #176b70;
+  --brand-dark: #0f4f53;
+  --brand-soft: #edf5f5;
+  --text: #263238;
+  --muted: #5f6f75;
+  --line: #dde5e6;
+  --warn-bg: #fff7e6;
+  --radius: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--text);
+  background: #fafcfc;
+}
+
+h1, h2, h3, h4 { line-height: 1.5; margin: 0 0 .6em; }
+p { margin: 0 0 1em; }
+ul, ol { padding-inline-start: 1.4em; margin: 0 0 1em; }
+li { margin-bottom: .4em; }
+
+a { color: #087e80; text-underline-offset: 3px; }
+a:hover { color: var(--brand-dark); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid #f5a623;
+  outline-offset: 2px;
+}
+
+img, video, iframe { max-width: 100%; height: auto; }
+img { border-radius: 8px; }
+
+table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: right; }
+th { background: var(--brand-soft); }
+.table-wrap { overflow-x: auto; }
+
+/* مكونات جاهزة للصفحات الجديدة مستقبلًا */
+.wrap { max-width: 900px; margin: 0 auto; padding: 20px; }
+.callout { background: var(--warn-bg); padding: 16px; border-radius: 10px; margin: 22px 0; }
+.btn-site {
+  display: inline-block; background: var(--brand); color: #fff;
+  padding: 10px 22px; border-radius: 8px; text-decoration: none;
+}
+.btn-site:hover { background: var(--brand-dark); color: #fff; }
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .wrap { padding: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+@media print {
+  body { background: #fff; }
+  a { color: #000; }
+}
