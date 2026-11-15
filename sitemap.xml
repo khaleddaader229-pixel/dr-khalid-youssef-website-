@@ -1,85 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    <!-- الصفحة الرئيسية -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <!-- الخبرات والمؤهلات -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/experience.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.95</priority>
-    </url>
-
-    <!-- الشهادات والدورات التدريبية -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/certificates.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-
-    <!-- جراحة العظام والكسور -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/bones-surgery.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-
-    <!-- إصابات الملاعب -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/sports-injuries.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-
-    <!-- جراحة المفاصل -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/joints-surgery.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-
-    <!-- جراحة المناظير -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/arthroscopy.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.90</priority>
-    </url>
-
-    <!-- المعلومات الطبية -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/medical-info.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- التمارين العلاجية -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/exercises.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-
-    <!-- التقييمات -->
-    <url>
-        <loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/rating.html</loc>
-        <lastmod>2026-08-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.70</priority>
-    </url>
-
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/experience.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/certificates.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/bones-surgery.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/sports-injuries.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/joints-surgery.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/arthroscopy.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/medical-info.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/exercises.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/knee-osteoarthritis.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/knee-effusion.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/knee-ligament-injuries.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/knee-replacement.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/knee-tendinitis.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/acl-tear.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/meniscus-tear.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/patella-fracture.html</loc><lastmod>2026-11-15</lastmod></url>
+<url><loc>https://khaleddaader229-pixel.github.io/dr-khalid-youssef-website-/patellofemoral-pain.html</loc><lastmod>2026-11-15</lastmod></url>
 </urlset>
